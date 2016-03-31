@@ -1,54 +1,48 @@
+* {
+    transition: .1s;
+}
 body {
-    background: #333;
-    font-family: sans-serif;
+    font-family: 'Lato', sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     overflow: hidden;
 }
-div, select {
-    background: #eee;
-    width: 120px;
-    height: 60px;
+div {
+    margin: 5px 0;
+    border: solid 2px;
+}
+div,
+select {
+    width: 130px;
+    height: 30px;
 }
 select {
+    font-weight: bold;
     outline: 0;
     border: 0;
-    color: #333;
-    text-align: center;
-    font-size: 16px;
-    user-select: none;
-    cursor: pointer;
-}
-button {
     background: 0;
-    border: 0;
-    outline: 0;
-    background-color: dodgerblue;
-    color: white;
-    width: 120px;
-    height: 60px;
     text-align: center;
     font-size: 16px;
     user-select: none;
     cursor: pointer;
-    transition: .1s;
 }
-button:hover {
-    background-color: steelblue;
-    transition: .1s;
+.light {
+    background: white;
 }
-button:active {
-    background-color: lightsteelblue;
+.dark {
+    background: #333;
 }
-a {
-    text-align: center;
-    color: #666;
-    font-size: 1.4em;
-    margin-top: 20px;
-    text-decoration: none;
+.light div {
+    border: solid 2px #333;
 }
-a:hover {
-    text-decoration: underline;
+.light select {
+    color: #333;
+}
+.dark div {
+    border: solid 2px #111;
+}
+.dark select {
+    color: #111;
 }

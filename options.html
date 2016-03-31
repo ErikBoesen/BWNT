@@ -1,34 +1,30 @@
 <html>
 
 <head>
-    <title>BW New Tab Options</title>
+    <title>New Tab Options</title>
     <link rel="stylesheet" href="options.css">
-    <script src="options.js"></script>
 </head>
 
-<body onload="loadOptions()">
+<body>
     <div>
         <select id="format">
-            <option value="12">12-hour</option>
-            <option value="24">24-hour</option>
+            <option value="12">12-HOUR</option>
+            <option value="24">24-HOUR</option>
         </select>
     </div>
     <div>
         <select id="theme">
-            <option value="light">Light</option>
-            <option value="dark">Dark</option>
+            <option value="light">LIGHT</option>
+            <option value="dark">DARK</option>
         </select>
     </div>
     <div>
-        <select id="clock-position">
-            <option value="random">Random</option>
-            <option value="center">Center</option>
+        <select id="zero">
+            <option value="true">SHOW ZERO</option>
+            <option value="false">HIDE ZERO</option>
         </select>
     </div>
-
-    <button id="save" onclick="saveOptions()">Save</button>
-
-    <a href="http://github.com/ErikBoesen/BWNT">GitHub</a>
+    <script src="options.js"></script>
 </body>
 
 </html>
