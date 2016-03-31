@@ -1,14 +1,14 @@
 {
-    "manifest_version": 2,
-    "name": "BWNT",
-    "description": "A black and white New Tab Page with nothing but a clock.",
-    "icons": {
-        "128": "icon.png"
-    },
-    "version": "1.0",
-    "permissions" : [],
-    "chrome_url_overrides" : {
-        "newtab": "newtab.html"
-    },
-    "options_page": "options.html"
- }
+	"manifest_version": 2,
+	"name": "BWNT",
+	"description": "A black and white New Tab Page with nothing but a clock.",
+	"icons": {
+		"128": "icon.png"
+	},
+	"version": "1.0",
+	"permissions": [],
+	"chrome_url_overrides": {
+		"newtab": "newtab.html"
+	},
+	"options_page": "options.html"
+}

@@ -32,13 +32,13 @@ select {
     background: white;
 }
 .dark {
-    background: #333;
+    background: #444;
 }
 .light div {
-    border: solid 2px #333;
+    border: solid 2px #444;
 }
 .light select {
-    color: #333;
+    color: #444;
 }
 .dark div {
     border: solid 2px #111;
