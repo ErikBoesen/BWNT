@@ -1,0 +1,54 @@
+body {
+    background: #333;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+div, select {
+    background: #eee;
+    width: 120px;
+    height: 60px;
+}
+select {
+    outline: 0;
+    border: 0;
+    color: #333;
+    text-align: center;
+    font-size: 16px;
+    user-select: none;
+    cursor: pointer;
+}
+button {
+    background: 0;
+    border: 0;
+    outline: 0;
+    background-color: dodgerblue;
+    color: white;
+    width: 120px;
+    height: 60px;
+    text-align: center;
+    font-size: 16px;
+    user-select: none;
+    cursor: pointer;
+    transition: .1s;
+}
+button:hover {
+    background-color: steelblue;
+    transition: .1s;
+}
+button:active {
+    background-color: lightsteelblue;
+}
+a {
+    text-align: center;
+    color: #666;
+    font-size: 1.4em;
+    margin-top: 20px;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
