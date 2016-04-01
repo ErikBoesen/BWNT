@@ -1,8 +1,15 @@
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Roboto Light'), local('Roboto-Light'), url(Roboto.woff2) format('woff2');
+    unicode-range: U+0000-00FF;
+}
 * {
     transition: .3s;
 }
 body {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -40,3 +47,7 @@ select {
 .night { background: #222; }
 .night div { border-color: white; }
 .night select { color: white; }
+
+.darkmaterial { background: #263238; }
+.darkmaterial div { color: #80DEEA; }
+.darkmaterial select { color: #80DEEA; }
