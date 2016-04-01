@@ -1,5 +1,5 @@
 * {
-    transition: .1s;
+    transition: .3s;
 }
 body {
     font-family: 'Lato', sans-serif;
@@ -28,21 +28,15 @@ select {
     user-select: none;
     cursor: pointer;
 }
-.light {
-    background: white;
-}
-.dark {
-    background: #444;
-}
-.light div {
-    border: solid 2px #444;
-}
-.light select {
-    color: #444;
-}
-.dark div {
-    border: solid 2px #111;
-}
-.dark select {
-    color: #111;
-}
+
+.light { background: white; }
+.light div { border-color: #444; }
+.light select { color: #444; }
+
+.dark { background: #444; }
+.dark div { border-color: #111; }
+.dark select { color: #111; }
+
+.night { background: #222; }
+.night div { border-color: white; }
+.night select { color: white; }

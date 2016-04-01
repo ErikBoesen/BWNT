@@ -8,44 +8,28 @@
 html,
 body {
     height: 100%;
-    overflow: hidden;
-    -webkit-font-smoothing: antialiased;
 }
 body {
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     cursor: default;
+    -webkit-font-smoothing: antialiased;
 }
 #clock {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     user-select: none;
-    text-align: center;
     font-size: 10em;
-    color: #111;
     font-family: 'Lato', sans-serif;
-    display: inline;
 }
-#hours,
-#minutes {
-    display: inline;
-}
-#hours:after {
-    content: ':';
-    margin-right: -25px;
-    margin-top: -15px;
-}
-.light {
-    background: white;
-}
-.dark {
-    background: #333;
-}
-.light #clock {
-    color: #333;
-}
-.dark #clock {
-    color: #111;
-}
+.light { background: white; }
+.light #clock { color: #333; }
+
+.dark { background: #333; }
+.dark #clock { color: #111; }
+
+.night { background: #222; }
+.night #clock { color: white; }
