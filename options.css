@@ -9,11 +9,11 @@ body {
     align-items: center;
     overflow: hidden;
 }
-div {
+.select {
     margin: 5px 0;
     border: solid 2px;
 }
-div,
+.select,
 select {
     width: 130px;
     height: 30px;
@@ -28,15 +28,76 @@ select {
     user-select: none;
     cursor: pointer;
 }
+.checkbox {
+    position: relative;
+    margin: 5px 0;
+}
+.checkbox label {
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    border: solid 2px black;
+    top: 2px;
+    left: 2px;
+    cursor: pointer;
+    background: white;
+    border-radius: 50px;
+}
+.checkbox label:after {
+    content: '';
+    width: 9px;
+    height: 5px;
+    position: absolute;
+    top: 6px;
+    left: 5px;
+    border: 3px solid black;
+    border-top: none;
+    border-right: none;
+    opacity: 0;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    transition: .1s;
+}
+.checkbox input {
+    visibility: hidden;
+}
+.checkbox input:checked + label:after {
+    opacity: 1;
+    transition: .1s;
+}
+.checkbox p {
+    display: inline-block;
+    margin-left: 12px;
+    margin-top: 7px;
+    font-size: 1.1em;
+}
 
-.light { background: white; }
+.light,
+.light .checkbox label { background: white; }
 .light div { border-color: #444; }
+.light .checkbox label { border-color: black; }
 .light select { color: #444; }
+.light p { color: black; }
 
-.dark { background: #444; }
-.dark div { border-color: #111; }
-.dark select { color: #111; }
+.dark,
+.dark .checkbox label { background: #444; }
+.dark div,
+.dark .checkbox label { border-color: #111; }
+.dark select,
+.dark p { color: #111; }
 
-.night { background: #222; }
-.night div { border-color: white; }
-.night select { color: white; }
+.night,
+.night .checkbox label { background: #222; }
+.night div,
+.night .checkbox label,
+.night .checkbox label:after { border-color: white; }
+.night select,
+.night p { color: white; }
+
+.material,
+.material .checkbox label { background: #263238; }
+.material div,
+.material .checkbox label,
+.material .checkbox label:after { border-color: white; }
+.material select,
+.material p { color: white; }

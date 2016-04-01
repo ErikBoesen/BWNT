@@ -6,25 +6,26 @@
 </head>
 
 <body>
-    <div>
+    <div class="select">
         <select id="format">
             <option value="12">12-HOUR</option>
             <option value="24">24-HOUR</option>
         </select>
     </div>
-    <div>
+    <div class="select">
         <select id="theme">
             <option value="light">LIGHT</option>
-            <option value="dark">DARK</option>
             <option value="night">NIGHT</option>
+            <option value="dark">DARK</option>
+            <option value="material">MATERIAL</option>
         </select>
     </div>
-    <div>
-        <select id="zero">
-            <option value="false">HIDE ZERO</option>
-            <option value="true">SHOW ZERO</option>
-        </select>
+    <div class="checkbox">
+        <input type="checkbox" id="zero">
+        <label for="zero"></label>
+        <p>SHOW LEADING ZERO</p>
     </div>
+
     <script src="options.js"></script>
 </body>
 

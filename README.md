@@ -7,10 +7,13 @@ Black and White New Tab Page by [Erik Boesen](https://github.com/ErikBoesen).
 1. Clone or download files.
 2. Open Chrome Extensions page and activate Developer Mode.
 3. Load Unpacked Extension, and locate the extension folder.
-4. Open it.
-5. Open a new tab and witness the beauty.
+4. Select the folder and click open.
 
 This extension should work out of box. Settings can be configured in the Options link.
+
+## Credits
+* Erik Boesen
+* James Trombo - Material theme
 
 --------------------------------------------------------------------------------
 

@@ -16,18 +16,12 @@ for (i = 0; i < theme.children.length; i++) {
 		break;
 	}
 }
-for (i = 0; i < zero.children.length; i++) {
-	var child = zero.children[i];
-	if (child.value == localStorage.zero) {
-		child.selected = true;
-		break;
-	}
-}
+zero.checked = JSON.parse(localStorage.zero);
 
 setInterval(function() {
 	localStorage.format = format.children[format.selectedIndex].value;
 	localStorage.theme = theme.children[theme.selectedIndex].value;
-	localStorage.zero = zero.children[zero.selectedIndex].value;
+	localStorage.zero = zero.checked;
 
 	document.body.className = localStorage.theme;
 }, 50);
