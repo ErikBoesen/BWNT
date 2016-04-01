@@ -54,3 +54,6 @@ body {
 
 .night { background: #222; }
 .night #clock { color: white; }
+
+.darkmaterial { background: #263238; }
+.darkmaterial #clock { color: #80DEEA; }

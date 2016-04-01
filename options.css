@@ -40,3 +40,7 @@ select {
 .night { background: #222; }
 .night div { border-color: white; }
 .night select { color: white; }
+
+.darkmaterial { background: #263238; }
+.darkmaterial div { color: #80DEEA; }
+.darkmaterial select { color: #80DEEA; }
