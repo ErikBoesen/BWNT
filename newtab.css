@@ -1,8 +1,8 @@
 @font-face {
-    font-family: 'Lato';
+    font-family: 'Roboto';
     font-style: normal;
     font-weight: 300;
-    src: local('Lato Light'), local('Lato-Light'), url(Lato.woff2) format('woff2');
+    src: local('Roboto Light'), local('Roboto-Light'), url(Roboto.woff2) format('woff2');
     unicode-range: U+0000-00FF;
 }
 html,
@@ -23,7 +23,28 @@ body {
     -webkit-user-select: none;
     user-select: none;
     font-size: 10em;
-    font-family: 'Lato', sans-serif;
+    color: #111;
+    font-family: 'Roboto', sans-serif;
+    display: inline;
+    text-shadow: 4px 4px 4px rgba(38, 50, 56, 0.2);
+}
+#hours,
+#minutes {
+    display: inline;
+}
+#hours:after {
+    content: ':';
+    margin-right: -25px;
+    margin-top: -15px;
+}
+.light {
+    background: white;
+}
+.dark {
+    background: #333;
+}
+.light #clock {
+    color: #333;
 }
 .light { background: white; }
 .light #clock { color: #333; }
