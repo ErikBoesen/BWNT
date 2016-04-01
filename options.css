@@ -8,6 +8,10 @@ body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+section {
+    margin: 5px 0;
 }
 .select {
     margin: 5px 0;
@@ -30,7 +34,6 @@ select {
 }
 .checkbox {
     position: relative;
-    margin: 5px 0;
 }
 .checkbox label {
     width: 22px;
