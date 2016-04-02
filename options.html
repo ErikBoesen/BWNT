@@ -1,16 +1,19 @@
+<!DOCTYPE html>
 <html>
 
 <head>
     <title>New Tab Options</title>
+    <link rel="stylesheet" href="newtab.css">
     <link rel="stylesheet" href="options.css">
 </head>
 
 <body>
-    <div class="select">
-        <select id="format">
-            <option value="12">12-HOUR</option>
-            <option value="24">24-HOUR</option>
-        </select>
+    <div id="clock"></div>
+    <div class="switch">
+        <p>24-HOUR</p>
+        <input type="checkbox" id="format">
+        <label for="format"></label>
+        <p>12-HOUR</p>
     </div>
     <div class="select">
         <select id="theme">
@@ -33,6 +36,7 @@
         </div>
     </section>
 
+    <script src="newtab.js"></script>
     <script src="options.js"></script>
 </body>
 

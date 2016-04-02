@@ -1,21 +1,56 @@
 * {
     transition: .3s;
 }
-body {
-    font-family: 'Lato', sans-serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    -webkit-font-smoothing: antialiased;
-}
 section {
     margin: 5px 0;
 }
+p {
+    font-size: 1.1em;
+    display: inline-block;
+}
+.switch {
+    margin: 20px 0;
+}
+.switch p {
+    margin: 0 10px;
+}
+.switch p:last-child {
+    margin-left: 55px;
+}
+.switch input {
+    display: none;
+}
+.switch label {
+    position: relative;
+    cursor: pointer;
+    height: 20px;
+    top: 2px;
+}
+.switch label:before,
+.switch label:after {
+    content: '';
+    position: absolute;
+    background-color: #333;
+}
+.switch label:before {
+    top: 0;
+    height: 10px;
+    width: 40px;
+    border-radius: 10px;
+}
+.switch label:after {
+    width: 20px;
+    height: 20px;
+    top: -5px;
+    left: -5px;
+    border-radius: 50%;
+    transition: .1s;
+}
+.switch input:checked + label:after {
+    left: 30px;
+}
 .select {
-    margin: 5px 0;
-    border: solid 2px;
+    border: solid 2px #333;
 }
 .select,
 select {
@@ -69,27 +104,22 @@ select {
     transition: .1s;
 }
 .checkbox p {
-    display: inline-block;
     margin-left: 12px;
     margin-top: 7px;
-    font-size: 1.1em;
 }
 
-.light,
 .light .checkbox label { background: white; }
 .light div { border-color: #444; }
 .light .checkbox label { border-color: black; }
 .light select { color: #444; }
 .light p { color: black; }
 
-.dark,
-.dark .checkbox label { background: #444; }
+.dark .checkbox label { background: #333; }
 .dark div,
 .dark .checkbox label { border-color: #111; }
 .dark select,
 .dark p { color: #111; }
 
-.night,
 .night .checkbox label { background: #222; }
 .night div,
 .night .checkbox label,
@@ -97,7 +127,6 @@ select {
 .night select,
 .night p { color: white; }
 
-.material,
 .material .checkbox label { background: #263238; }
 .material div,
 .material .checkbox label,
