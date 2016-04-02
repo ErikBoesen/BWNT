@@ -7,6 +7,7 @@
 }
 html, body { height: 100%; }
 body {
+    font-family: 'Lato', sans-serif;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -19,7 +20,6 @@ body {
 }
 #clock {
     font-size: 10em;
-    font-family: 'Lato', sans-serif;
 }
 .light { background: white; }
 .light #clock { color: #333; }

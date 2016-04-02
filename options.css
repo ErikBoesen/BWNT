@@ -4,18 +4,16 @@
 body {
     flex-direction: column;
 }
-section {
-    margin-bottom: 10px;
-}
 p {
     font-size: 1.1em;
+    font-weight: bolder;
     display: inline-block;
 }
 .switch {
     margin: 20px 0;
 }
 .switch p {
-    margin: 0 5px;
+    margin: 0 6px;
 }
 .switch p:last-child {
     margin-left: 52px;
@@ -27,7 +25,7 @@ p {
     position: relative;
     cursor: pointer;
     height: 20px;
-    top: 1px;
+    top: 2px;
 }
 .switch label:before,
 .switch label:after {
@@ -93,13 +91,15 @@ p {
     margin-top: 7px;
 }
 .select {
+    margin-top: 5px;
     border: solid 2px #333;
     overflow: hidden;
+    opacity: 0;
+    height: 0;
 }
 .select,
 select {
     width: 130px;
-    height: 30px;
 }
 select {
     font-weight: bold;
@@ -110,23 +110,16 @@ select {
     font-size: 16px;
     user-select: none;
     cursor: pointer;
-}
-.github {
-    position: absolute;
-    bottom: 15px;
-    right: 15px;
-    text-decoration: none;
-    font-size: 1.1em;
+    height: 30px;
 }
 
 .light .switch label:before,
 .light .switch label:after { background: #333; }
 .light .checkbox label { background: white; }
-.light div { border-color: #444; }
-.light .checkbox label { border-color: black; }
-.light select { color: #444; }
-.light p { color: black; }
-.light .github { color: grey; }
+.light div { border-color: #333; }
+.light .checkbox label { border-color: #333; }
+.light select { color: #333; }
+.light p { color: #333; }
 
 .night .switch label:before,
 .night .switch label:after { background: white; }
@@ -136,7 +129,6 @@ select {
 .night .checkbox label:after { border-color: white; }
 .night select,
 .night p { color: white; }
-.night .github { color: white; }
 
 .dark .switch label:before,
 .dark .switch label:after { background: #111; }
@@ -144,8 +136,7 @@ select {
 .dark div,
 .dark .checkbox label { border-color: #111; }
 .dark select,
-.dark p,
-.dark .github { color: #111; }
+.dark p { color: #111; }
 
 .material .switch label:before,
 .material .switch label:after { background: #00BCD4; }
@@ -154,5 +145,4 @@ select {
 .material .checkbox label,
 .material .checkbox label:after { border-color: white; }
 .material select,
-.material p,
-.material .github { color: white; }
+.material p { color: white; }

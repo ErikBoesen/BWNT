@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
 	"name": "BWNT",
-	"description": "A black and white New Tab Page with nothing but a clock.",
+	"description": "Hyperminimalistic black & white New Tab Page with nothing but a clock.",
 	"icons": {
 		"128": "icon.png"
 	},
