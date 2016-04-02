@@ -9,18 +9,15 @@ html, body { height: 100%; }
 body {
     overflow: hidden;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     cursor: default;
     -webkit-user-select: none;
+    -webkit-touch-callout: none;
     user-select: none;
     -webkit-font-smoothing: antialiased;
 }
 #clock {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    user-select: none;
     font-size: 10em;
     font-family: 'Lato', sans-serif;
 }

@@ -1,8 +1,11 @@
 * {
     transition: .3s;
 }
+body {
+    flex-direction: column;
+}
 section {
-    margin: 5px 0;
+    margin: 15px 0;
 }
 p {
     font-size: 1.1em;
@@ -30,7 +33,6 @@ p {
 .switch label:after {
     content: '';
     position: absolute;
-    background-color: #333;
 }
 .switch label:before {
     top: 0;
@@ -44,6 +46,7 @@ p {
     top: -5px;
     left: -5px;
     border-radius: 50%;
+    box-shadow: 0 0 2px rgba(0, 0, 0, .5);
     transition: .1s;
 }
 .switch input:checked + label:after {
@@ -108,18 +111,24 @@ select {
     margin-top: 7px;
 }
 
+.light .switch label:before,
+.light .switch label:after { background: #333; }
 .light .checkbox label { background: white; }
 .light div { border-color: #444; }
 .light .checkbox label { border-color: black; }
 .light select { color: #444; }
 .light p { color: black; }
 
+.dark .switch label:before,
+.dark .switch label:after { background: #111; }
 .dark .checkbox label { background: #333; }
 .dark div,
 .dark .checkbox label { border-color: #111; }
 .dark select,
 .dark p { color: #111; }
 
+.night .switch label:before,
+.night .switch label:after { background: white; }
 .night .checkbox label { background: #222; }
 .night div,
 .night .checkbox label,
@@ -127,6 +136,8 @@ select {
 .night select,
 .night p { color: white; }
 
+.material .switch label:before,
+.material .switch label:after { background: #00BCD4; }
 .material .checkbox label { background: #263238; }
 .material div,
 .material .checkbox label,

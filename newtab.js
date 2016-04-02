@@ -1,7 +1,7 @@
 function clock() {
 	var h = new Date().getHours(),
 		m = new Date().getMinutes();
-	if (localStorage.format === '12') {
+	if (JSON.parse(localStorage.format)) {
 		if (h > 12) {
 			h = h - 12;
 		}
