@@ -1,24 +1,15 @@
-function clock() {
-	var h = new Date().getHours(),
-		m = new Date().getMinutes();
-	if (JSON.parse(localStorage.format)) {
-		if (h > 12) {
-			h = h - 12;
-		}
-	}
-	if (localStorage.zero === 'true') {
-		if (h < 10) { h = '0' + h; }
-	}
-    if (m < 10) { m = '0' + m; }
-	document.getElementById('clock').innerHTML = h + ':' + m;
+if (localStorage.length != 4) {
+    localStorage.format = true;
+    localStorage.zero = false;
+    localStorage.cycle = true;
+    localStorage.theme = 'light';
 }
 
-clock();
-setInterval(function() {
-	clock();
-	if (JSON.parse(localStorage.cycle)) {
-		var hour = new Date().getHours();
-		if (hour >= 6 && hour <= 20) {
+function update() {
+	var h = new Date().getHours(),
+		m = new Date().getMinutes();
+    if (JSON.parse(localStorage.cycle)) {
+		if (h >= 6 && h <= 20) {
 			document.body.className = 'light';
 		} else {
 			document.body.className = 'night';
@@ -26,4 +17,15 @@ setInterval(function() {
 	} else {
 		document.body.className = localStorage.theme;
 	}
-}, 200);
+	if (JSON.parse(localStorage.format)) {
+		if (h > 12) { h = h - 12; }
+	}
+	if (JSON.parse(localStorage.zero)) {
+		if (h < 10) { h = '0' + h; }
+	}
+	if (m < 10) { m = '0' + m; }
+	document.getElementById('clock').innerHTML = h + ':' + m;
+}
+
+update();
+setInterval(function() { update(); }, 200);
