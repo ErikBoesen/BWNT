@@ -90,6 +90,19 @@ p {
     margin-left: 12px;
     margin-top: 7px;
 }
+.checkbox img {
+    margin-top: -10px;
+    margin-left: 20px;
+    -webkit-filter: grayscale(1);
+    filter: grayscale(1);
+}
+.pepecontainer {
+    margin-top: 20px;
+}
+#pepe:checked ~ img {
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);
+}
 .select {
     margin-top: 5px;
     border: solid 2px #333;

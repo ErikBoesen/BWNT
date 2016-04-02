@@ -1,11 +1,11 @@
 {
 	"manifest_version": 2,
-	"name": "BWNT",
-	"description": "Hyperminimalistic black & white New Tab Page with nothing but a clock.",
+	"name": "PEPE NEW TAB",
+	"description": "> #1 new tab 4chan verifid",
 	"icons": {
 		"128": "icon.png"
 	},
-	"version": "1.1",
+	"version": "13.3.7",
 	"permissions": [],
 	"chrome_url_overrides": {
 		"newtab": "newtab.html"
