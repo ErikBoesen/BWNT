@@ -12,6 +12,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     cursor: default;
     -webkit-user-select: none;
     -webkit-touch-callout: none;
@@ -20,15 +21,23 @@ body {
 }
 #clock {
     font-size: 10em;
+    line-height: 1.1;
+}
+#date {
+    font-size: 2em;
 }
 .light { background: white; }
-.light #clock { color: #333; }
+.light #clock,
+.light #date { color: #333; }
 
 .dark { background: #333; }
-.dark #clock { color: #111; }
+.dark #clock,
+.dark #date { color: #111; }
 
 .night { background: #222; }
-.night #clock { color: white; }
+.night #clock,
+.night #date { color: white; }
 
 .material { background: #263238; }
-.material #clock { color: white; text-shadow: 4px 4px 10px rgba(0,0,0,.2); }
+.material #clock,
+.material #date { color: white; text-shadow: 4px 4px 10px rgba(0,0,0,.2); }

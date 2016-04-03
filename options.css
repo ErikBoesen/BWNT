@@ -1,16 +1,13 @@
 * {
     transition: .3s;
 }
-body {
-    flex-direction: column;
-}
 p {
     font-size: 1.1em;
     font-weight: bolder;
     display: inline-block;
 }
 .switch {
-    margin: 20px 0;
+    margin: 30px 0 10px;
 }
 .switch p {
     margin: 0 6px;
@@ -90,16 +87,16 @@ p {
     margin-left: 12px;
     margin-top: 7px;
 }
-.select {
-    margin-top: 5px;
-    border: solid 2px #333;
-    overflow: hidden;
-    opacity: 0;
-    height: 0;
-}
 .select,
 select {
     width: 130px;
+    height: 30px;
+}
+.select {
+    margin-top: 3px;
+    border: solid 2px #333;
+    overflow: hidden;
+    opacity: .5;
 }
 select {
     font-weight: bold;
@@ -110,7 +107,6 @@ select {
     font-size: 16px;
     user-select: none;
     cursor: pointer;
-    height: 30px;
 }
 
 .light .switch label:before,

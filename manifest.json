@@ -1,11 +1,12 @@
 {
 	"manifest_version": 2,
-	"name": "BWNT",
-	"description": "Hyperminimalistic black & white New Tab Page with nothing but a clock.",
+	"name": "BWNT - New Tab",
+    "short_name": "BWNT",
+	"description": "Hyperminimalistic black & white New Tab Page.",
 	"icons": {
 		"128": "icon.png"
 	},
-	"version": "1.1",
+	"version": "1.2.1",
 	"permissions": [],
 	"chrome_url_overrides": {
 		"newtab": "newtab.html"
