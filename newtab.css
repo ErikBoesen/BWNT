@@ -8,6 +8,7 @@
 html, body { height: 100%; }
 body {
     font-family: 'Lato', sans-serif;
+    margin: 0;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -20,11 +21,11 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 #clock {
-    font-size: 10em;
+    font-size: 12em;
     line-height: 1.1;
 }
 #date {
-    font-size: 2em;
+    font-size: 2.1em;
 }
 .light { background: white; }
 .light #clock,
