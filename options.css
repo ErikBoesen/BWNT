@@ -1,8 +1,8 @@
 * {
     transition: .3s;
 }
-p {
-    font-size: 1.1em;
+p, select {
+    font-size: 1.3em;
     font-weight: bolder;
     display: inline-block;
 }
@@ -47,6 +47,9 @@ p {
 .switch input:checked + label:after {
     left: 25px;
 }
+section {
+    margin-top: 10px;
+}
 .checkbox {
     position: relative;
 }
@@ -85,7 +88,7 @@ p {
 }
 .checkbox p {
     margin-left: 12px;
-    margin-top: 7px;
+    margin-top: 6px;
 }
 .select,
 select {
@@ -104,7 +107,6 @@ select {
     border: 0;
     background: 0;
     text-align: center;
-    font-size: 16px;
     user-select: none;
     cursor: pointer;
 }
