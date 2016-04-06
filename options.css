@@ -139,6 +139,6 @@ select {
 .material .checkbox label { background: #263238; }
 .material div,
 .material .checkbox label,
-.material .checkbox label:after { border-color: white; }
+.material .checkbox label:after { border-color: #80DEEA; }
 .material select,
-.material p { color: white; }
+.material p { color: #80DEEA; }
