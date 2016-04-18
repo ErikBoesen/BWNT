@@ -3,7 +3,6 @@
 }
 p, select {
     font-size: 1.3em;
-    font-weight: bolder;
     display: inline-block;
 }
 .switch {
@@ -88,7 +87,7 @@ section {
 }
 .checkbox p {
     margin-left: 12px;
-    margin-top: 6px;
+    margin-top: 7px;
 }
 .select,
 select {
@@ -102,7 +101,6 @@ select {
     opacity: .5;
 }
 select {
-    font-weight: bold;
     outline: 0;
     border: 0;
     background: 0;
@@ -114,9 +112,9 @@ select {
 .light .switch label:before,
 .light .switch label:after { background: #333; }
 .light .checkbox label { background: white; }
-.light div { border-color: #333; }
+.light div,
 .light .checkbox label { border-color: #333; }
-.light select { color: #333; }
+.light select,
 .light p { color: #333; }
 
 .night .switch label:before,
