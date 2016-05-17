@@ -104,6 +104,7 @@ select {
     outline: 0;
     border: 0;
     background: 0;
+    color: 0;
     text-align: center;
     user-select: none;
     cursor: pointer;
@@ -115,6 +116,8 @@ select {
 .light div,
 .light .checkbox label { border-color: #333; }
 .light select,
+.light select { background: white;}
+.light select { color: #333;}
 .light p { color: #333; }
 
 .night .switch label:before,
@@ -124,6 +127,8 @@ select {
 .night .checkbox label,
 .night .checkbox label:after { border-color: white; }
 .night select,
+.night select { background: #222;}
+.night select { color: white;}
 .night p { color: white; }
 
 .dark .switch label:before,
@@ -132,6 +137,8 @@ select {
 .dark div,
 .dark .checkbox label { border-color: #111; }
 .dark select,
+.dark select { background: #333;}
+.dark select { color: #111;}
 .dark p { color: #111; }
 
 .material .switch label:before,
@@ -141,4 +148,6 @@ select {
 .material .checkbox label,
 .material .checkbox label:after { border-color: white; }
 .material select,
+.material select { background: #263238;}
+.material select { color: white;}
 .material p { color: white; }
