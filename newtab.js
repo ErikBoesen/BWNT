@@ -20,6 +20,7 @@ function update() {
 	}
 	if (JSON.parse(localStorage.format)) {
 		if (h > 12) { h = h - 12; }
+        if (h === 0) { h = 12; }
 	}
 	if (m < 10) { m = '0' + m; }
 	document.getElementById('clock').innerHTML = h + ':' + m;
