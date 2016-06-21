@@ -7,9 +7,8 @@ if (localStorage.length != 5) {
 }
 
 function update() {
-        
-    var date = new Date(), h = date.getHours(),
-		           m = date.getMinutes();
+	var h = new Date().getHours(),
+		m = new Date().getMinutes();
     if (JSON.parse(localStorage.cycle)) {
 		if (h >= 6 && h <= 20) {
 			document.body.className = 'light';
@@ -27,12 +26,12 @@ function update() {
 	document.getElementById('clock').innerHTML = h + ':' + m;
     if (JSON.parse(localStorage.showDate)) {
         var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-        var mon = months[date.getMonth()];
+        var mon = months[new Date().getMonth()];
         
         var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-        var day = days[date.getDay()];
+        var day = days[new Date().getDay()];
        
-        document.getElementById('date').innerHTML = day + ', ' + mon + ' ' + date.getDate();
+        document.getElementById('date').innerHTML = day + ', ' + mon + ' ' + new Date().getDate();
     } else {
         document.getElementById('date').innerHTML = '';
     }
