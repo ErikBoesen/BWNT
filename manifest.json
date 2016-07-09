@@ -2,7 +2,7 @@
 	"manifest_version": 2,
 	"name": "BWNT - New Tab",
     "short_name": "BWNT",
-	"description": "Hyperminimalistic black & white New Tab Page.",
+	"description": "Gorgeous minimalistic black & white New Tab Page.",
 	"icons": {
 		"128": "icon.png"
 	},
