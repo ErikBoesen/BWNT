@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>New Tab Options</title>
+    <title data-i18nid="options_title">New Tab Options</title>
     <link rel="stylesheet" href="newtab.css">
     <link rel="stylesheet" href="options.css">
 </head>
@@ -10,33 +10,37 @@
 <body>
     <div id="clock"></div>
     <div id="date"></div>
-    <div class="switch">
-        <p>24-HOUR</p>
-        <input type="checkbox" id="format">
-        <label for="format"></label>
-        <p>12-HOUR</p>
-    </div>
-    <section>
-        <div class="checkbox">
-            <input type="checkbox" id="showDate">
-            <label for="showDate"></label>
-            <p>SHOW DATE
+
+    <section class="options">
+        <div class="switch">
+            <p data-i18nid="24_hour">24-HOUR</p>
+            <input type="checkbox" id="format">
+            <label for="format"></label>
+            <p data-i18nid="12_hour">12-HOUR</p>
         </div>
-        <div class="checkbox">
-            <input type="checkbox" id="cycle">
-            <label for="cycle"></label>
-            <p>CHANGE THEME BY TIME OF DAY</p>
+        <section>
+            <div class="checkbox">
+                <input type="checkbox" id="showDate">
+                <label for="showDate"></label>
+                <p data-i18nid="show_date">SHOW DATE</p>
+            </div>
+            <div class="checkbox">
+                <input type="checkbox" id="cycle">
+                <label for="cycle"></label>
+                <p data-i18nid="change_theme_daytime">CHANGE THEME BY TIME OF DAY</p>
+            </div>
+        </section>
+        <div class="select">
+            <select id="theme">
+                <option value="light" data-i18nid="light">LIGHT</option>
+                <option value="night" data-i18nid="night">NIGHT</option>
+                <option value="dark" data-i18nid="dark">DARK</option>
+                <option value="material" data-i18nid="material">MATERIAL</option>
+            </select>
         </div>
     </section>
-    <div class="select">
-        <select id="theme">
-            <option value="light">LIGHT</option>
-            <option value="night">NIGHT</option>
-            <option value="dark">DARK</option>
-            <option value="material">MATERIAL</option>
-        </select>
-    </div>
 
+    <script src="i18n.js"></script>
     <script src="newtab.js"></script>
     <script src="options.js"></script>
 </body>
