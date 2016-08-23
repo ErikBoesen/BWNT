@@ -46,15 +46,6 @@ p, select {
 .switch input:checked + label:after {
     left: 25px;
 }
-.options {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-.options, .options select {
-	text-transform: uppercase;
-}
 section {
     margin-top: 10px;
 }
