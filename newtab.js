@@ -8,16 +8,8 @@ if (localStorage.length != 5) {
 }
 
 // Arrays of month and day names which will be chosen from to build date.
-var months = ['month_january', 'month_february', 'month_march', 'month_april', 'month_may', 'month_june', 'month_july', 'month_august', 'month_september', 'month_october', 'month_november', 'month_december'];
-var days = ['day_monday', 'day_tuesday', 'day_wednesday', 'day_thursday', 'day_friday', 'day_saturday','day_sunday'];
-
-function getDayName(dayNumber) {
-	return chrome.i18n.getMessage(days[dayNumber]);
-}
-
-function getMonthName(monthNumber) {
-	return chrome.i18n.getMessage(months[monthNumber]);
-}
+var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
 function update() {
     // Get the current hour and minute.
@@ -48,7 +40,7 @@ function update() {
     // If date is desired to be shown
 	if (JSON.parse(localStorage.showDate)) {
         // Fill in date
-		document.getElementById('date').innerHTML =  getDayName(d.getDay())+ ', ' + getMonthName(d.getMonth()) + ' ' + d.getDate();
+		document.getElementById('date').innerHTML = days[d.getDay()] + ', ' + months[d.getMonth()] + ' ' + d.getDate();
 	} else {
         // Delete date
 		document.getElementById('date').innerHTML = '';
