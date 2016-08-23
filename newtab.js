@@ -14,9 +14,16 @@ var newtab = (function() {
 	}
 
 	// Arrays of month and day names which will be chosen from to build date.
-	Clock.months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-	Clock.weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+	Clock.months = ['month_january', 'month_february', 'month_march', 'month_april', 'month_may', 'month_june', 'month_july', 'month_august', 'month_september', 'month_october', 'month_november', 'month_december'];
+	Clock.weekdays = ['day_monday', 'day_tuesday', 'day_wednesday', 'day_thursday', 'day_friday', 'day_saturday','day_sunday'];
 
+	function getDayName(dayNumber) {
+		return chrome.i18n.getMessage(Clock.weekdays[dayNumber]);
+	}
+
+	function getMonthName(monthNumber) {
+		return chrome.i18n.getMessage(Clock.months[monthNumber]);
+	}
 	//Init DOM elements
 	Clock.prototype._init = function() {
 		this._clock_elem = document.getElementById('clock');
@@ -69,8 +76,8 @@ var newtab = (function() {
 		this.minute = m;
 		this.hour = h;
 		this.day = date.getDate();
-		this.weekday = Clock.weekdays[date.getDay()];
-		this.month = Clock.months[date.getMonth()];
+		this.weekday = getDayName(date.getDay());
+		this.month = getMonthName(date.getMonth());
 	};
 
 	// Fill in all visible widgets

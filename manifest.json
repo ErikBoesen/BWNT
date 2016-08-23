@@ -1,11 +1,12 @@
 {
 	"manifest_version": 2,
-	"name": "BWNT - New Tab",
+	"name": "__MSG_extension_name__",
     "short_name": "BWNT",
-	"description": "Gorgeous minimalistic black & white New Tab Page.",
+	"description": "__MSG_extension_description__",
 	"icons": {
 		"128": "icon.png"
 	},
+	"default_locale": "en",
 	"version": "1.3.2",
 	"permissions": [],
 	"chrome_url_overrides": {
