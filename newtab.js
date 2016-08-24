@@ -38,17 +38,20 @@ var newtab = (function() {
 		this.theme = localStorage.theme || 'light';
 
 		this.update();
-		this._load_theme();
+		this._build();
 		this.show();
 	}
 
-	Clock.prototype._load_theme = function() {
+	Clock.prototype._build = function() {
 		//Init theme based on hour if enabled
 		if(this.cycle) {
 			document.body.className = this.hour >= 6 && this.hour <= 20 ? 'light' : 'night';
 		} else {
 			document.body.className = this.theme;
 		}
+		//Clear date view
+		if(!this.show_date)
+			this._date_elem.innerHTML = '';
 	}
 
 	//Updates internal date and time to the current one
@@ -85,9 +88,6 @@ var newtab = (function() {
 		this._clock_elem.innerHTML = this.hour + ':' + this.minute;
 		if (this.show_date)
 			this._date_elem.innerHTML = this.weekday + ', ' + this.month + ' ' + this.day;
-		else
-			this._date_elem.innerHTML = '';
-
 	};
 
 	Clock.prototype.start = function() {
