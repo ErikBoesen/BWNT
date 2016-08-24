@@ -16,28 +16,28 @@
 		format.checked = JSON.parse(localStorage.format);
 		format.addEventListener('change',function() {
 			localStorage.format = format.checked;
-			clock._load_options();
+			clock.load_options();
 		});
 
 		var show_date = document.getElementById('showDate');
 		show_date.checked = JSON.parse(localStorage.show_date);
 		show_date.addEventListener('change',function() {
 			localStorage.show_date = show_date.checked;
-			clock._load_options();
+			clock.load_options();
 		});
 
 		var theme = document.getElementById('theme');
 		theme.value = localStorage.theme;
 		theme.addEventListener('change',function() {
 			localStorage.theme = theme.children[theme.selectedIndex].value;
-			clock._load_options();
+			clock.load_options();
 		});
 
 		var cycle = document.getElementById('cycle');
 		cycle.checked = JSON.parse(localStorage.cycle);
 		cycle.addEventListener('change',function() {
 			localStorage.cycle = cycle.checked;
-			clock._load_options();
+			clock.load_options();
 
 			// If automatic day/night theme is on, mark theme selector as invalid by graying it out
 			if (cycle.checked) {

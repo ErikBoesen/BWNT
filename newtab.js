@@ -1,29 +1,19 @@
 var newtab = (function() {
+	var extension = {};
 
 	const REFRESH_TIME_MS = 500;
 	const CLOCK_ID = 'clock';
 
-	var extension = {};
-
-	function Clock() {
-		this._init();
-		this._load_options();
-		this.start();
-
-		// Automatically update all tabs
-		window.addEventListener('storage',this._load_options.bind(this));
-	}
-
 	// Arrays of month and day names which will be chosen from to build date.
-	Clock.months = ['month_january', 'month_february', 'month_march', 'month_april', 'month_may', 'month_june', 'month_july', 'month_august', 'month_september', 'month_october', 'month_november', 'month_december'];
-	Clock.weekdays = ['day_monday', 'day_tuesday', 'day_wednesday', 'day_thursday', 'day_friday', 'day_saturday','day_sunday'];
+	const months = ['month_january', 'month_february', 'month_march', 'month_april', 'month_may', 'month_june', 'month_july', 'month_august', 'month_september', 'month_october', 'month_november', 'month_december'];
+	const weekdays = ['day_monday', 'day_tuesday', 'day_wednesday', 'day_thursday', 'day_friday', 'day_saturday', 'day_sunday'];
 
 	function getDayName(dayNumber) {
-		return chrome.i18n.getMessage(Clock.weekdays[dayNumber]);
+		return chrome.i18n.getMessage(weekdays[dayNumber]);
 	}
 
 	function getMonthName(monthNumber) {
-		return chrome.i18n.getMessage(Clock.months[monthNumber]);
+		return chrome.i18n.getMessage(months[monthNumber]);
 	}
 
 	function getMeridiem(hour) {
@@ -36,8 +26,17 @@ var newtab = (function() {
 		return chrome.i18n.getMessage(id);
 	}
 
-	//Init DOM elements
-	Clock.prototype._init = function() {
+	function Clock() {
+		Clock_init.call(this);
+		this.load_options();
+		this.start();
+
+		// Automatically update all tabs
+		window.addEventListener('storage', this.load_options.bind(this));
+	}
+
+	// Init DOM elements
+	function Clock_init() {
 		var clock_container = document.getElementById(CLOCK_ID);
 
 		this._clock_elem = document.createElement('div');
@@ -48,37 +47,37 @@ var newtab = (function() {
 		clock_container.appendChild(this._meridiem_elem);
 
 		this._date_elem = document.getElementById('date');
-	};
+	}
 
-	//Sync local options whit localStorage
-	Clock.prototype._load_options = function() {
+	// Sync local options with localStorage
+	Clock.prototype.load_options = function() {
 		this.format = localStorage.format ? JSON.parse(localStorage.format) : false;
 		this.show_date = localStorage.show_date ? JSON.parse(localStorage.show_date) : true;
 		this.cycle = localStorage.cycle ? JSON.parse(localStorage.cycle) : true;
 		this.theme = localStorage.theme || 'light';
 
 		this.update();
-		this._build();
+		Clock_build.call(this);
 		this.show();
-	}
+	};
 
-	Clock.prototype._build = function() {
-		//Init theme based on hour if enabled
-		if(this.cycle) {
+	function Clock_build() {
+		// Init theme based on hour if enabled
+		if (this.cycle) {
 			document.body.className = this.hour >= 6 && this.hour <= 20 ? 'light' : 'night';
 		} else {
 			document.body.className = this.theme;
 		}
-		
+
 		//Clear date view
-		if(!this.show_date)
+		if (!this.show_date)
 			this._date_elem.textContent = '';
 
-		if(!this.format)
+		if (!this.format)
 			this._meridiem_elem.textContent = '';
 	}
 
-	//Updates internal date and time to the current one
+	// Updates internal date and time to the current one
 	Clock.prototype.update = function() {
 		var date = new Date(),
 		    h = h12 = date.getHours(),
@@ -106,7 +105,7 @@ var newtab = (function() {
 	// Fill in all visible widgets
 	Clock.prototype.show = function() {
 		var h;
-		if(this.format) {
+		if (this.format) {
 			h = this.hour12;
 			this._meridiem_elem.textContent = this.meridiem;
 		} else {
@@ -118,6 +117,7 @@ var newtab = (function() {
 			this._date_elem.textContent = this.weekday + ', ' + this.month + ' ' + this.day;
 	};
 
+	// Starts clock running
 	Clock.prototype.start = function() {
 		var self = this;
 		if(!this._started_id) {
@@ -128,8 +128,9 @@ var newtab = (function() {
 		}
 	};
 
+	// Stops clock from running
 	Clock.prototype.stop = function() {
-		if(this._started_id) {
+		if (this._started_id) {
 			clearInterval(this._started_id);
 			this._started_id = null;
 		}
