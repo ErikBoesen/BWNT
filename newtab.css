@@ -33,6 +33,16 @@ body {
     line-height: 1;
     font-weight: 100;
 }
+#clock > div {
+	display: inline-block;
+}
+#clock .meridiem {
+	font-size: 20%;
+	font-weight: initial;
+	text-transform: uppercase;
+	width: 1.5em;
+	margin-right: -1.5em;
+}
 #date {
     font-size: 2.4em;
 }
