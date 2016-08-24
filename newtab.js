@@ -54,27 +54,22 @@ var newtab = (function() {
 	//Updates internal date and time to the current one
 	Clock.prototype.update = function() {
 		var date = new Date(),
-		    h = date.getHours(),
+		    h = h12 = date.getHours(),
 		    m = date.getMinutes();
 
-		// If 12 hour time is turned on
-		if (this.format) {
-			// Convert hours above 12 to 12-hour counterparts
-			if (h > 12) h -= 12;
-			// Correct for hour 0
-			else if (h === 0) h = 12;
+		// Convert hours above 12 to 12-hour counterparts
+		if (h12 > 12) h12 -= 12;
+		// Correct for hour 0
+		else if (h12 === 0) h12 = 12;
 
-		} else if (h < 10)  {
-			// If 24 hour time is enabled and
-			// hours are only one digit long, add a leading 0.
-			h = '0' + h;
-		}
-
+		// If hours are only one digit long, add a leading 0.
+		if (h < 10) h = '0' + h;
 		// If minutes are only one digit long, add a leading 0.
 		if (m < 10) m = '0' + m;
 
 		this.minute = m;
 		this.hour = h;
+		this.hour12 = h12;
 		this.day = date.getDate();
 		this.weekday = getDayName(date.getDay());
 		this.month = getMonthName(date.getMonth());
@@ -82,7 +77,9 @@ var newtab = (function() {
 
 	// Fill in all visible widgets
 	Clock.prototype.show = function() {
-		this._clock_elem.innerHTML = this.hour + ':' + this.minute;
+		var h = this.format ? this.hour12 : this.hour;
+		this._clock_elem.innerHTML = h + ':' + this.minute;
+		
 		if (this.show_date)
 			this._date_elem.innerHTML = this.weekday + ', ' + this.month + ' ' + this.day;
 		else
