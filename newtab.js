@@ -1,6 +1,7 @@
 var newtab = (function() {
 
 	const REFRESH_TIME_MS = 500;
+	const CLOCK_ID = 'clock';
 
 	var extension = {};
 
@@ -24,9 +25,28 @@ var newtab = (function() {
 	function getMonthName(monthNumber) {
 		return chrome.i18n.getMessage(Clock.months[monthNumber]);
 	}
+
+	function getMeridiem(hour) {
+		var id;
+		if(hour > 12 || hour === 0) {
+			id = 'time_pm';
+		} else {
+			id = 'time_am';
+		}
+		return chrome.i18n.getMessage(id);
+	}
+
 	//Init DOM elements
 	Clock.prototype._init = function() {
-		this._clock_elem = document.getElementById('clock');
+		var clock_container = document.getElementById(CLOCK_ID);
+
+		this._clock_elem = document.createElement('div');
+		clock_container.appendChild(this._clock_elem);
+
+		this._meridiem_elem = document.createElement('div');
+		this._meridiem_elem.className = 'meridiem';
+		clock_container.appendChild(this._meridiem_elem);
+
 		this._date_elem = document.getElementById('date');
 	};
 
@@ -49,6 +69,9 @@ var newtab = (function() {
 		} else {
 			document.body.className = this.theme;
 		}
+
+		if(!this.format)
+			this._meridiem_elem.textContent = '';
 	}
 
 	//Updates internal date and time to the current one
@@ -70,6 +93,7 @@ var newtab = (function() {
 		this.minute = m;
 		this.hour = h;
 		this.hour12 = h12;
+		this.meridiem = getMeridiem(h12);
 		this.day = date.getDate();
 		this.weekday = getDayName(date.getDay());
 		this.month = getMonthName(date.getMonth());
@@ -77,9 +101,15 @@ var newtab = (function() {
 
 	// Fill in all visible widgets
 	Clock.prototype.show = function() {
-		var h = this.format ? this.hour12 : this.hour;
+		var h;
+		if(this.format) {
+			h = this.hour12;
+			this._meridiem_elem.textContent = this.meridiem;
+		} else {
+			h = this.hour;
+		}
 		this._clock_elem.innerHTML = h + ':' + this.minute;
-		
+
 		if (this.show_date)
 			this._date_elem.innerHTML = this.weekday + ', ' + this.month + ' ' + this.day;
 		else
