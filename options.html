@@ -13,31 +13,29 @@
 
     <section class="options">
         <div class="switch">
-            <p data-i18nid="24_hour">24-HOUR</p>
-            <input type="checkbox" id="format">
-            <label for="format"></label>
-            <p data-i18nid="12_hour">12-HOUR</p>
+
+            <input type="checkbox" id="format"/>
+			<label for="format" data-i18nid="24_hour">24-hour</label>
+            <label for="format" data-i18nid="12_hour">12-hour</label>
         </div>
         <section>
             <div class="checkbox">
                 <input type="checkbox" id="showDate">
-                <label for="showDate"></label>
-                <p data-i18nid="show_date">SHOW DATE</p>
+                <label for="showDate" data-i18nid="show_date">Show date</label>
             </div>
             <div class="checkbox">
                 <input type="checkbox" id="cycle">
-                <label for="cycle"></label>
-                <p data-i18nid="change_theme_daytime">CHANGE THEME BY TIME OF DAY</p>
+                <label for="cycle" data-i18nid="change_theme_daytime">Change theme by time of day</label>
             </div>
         </section>
-        <div class="select">
+
             <select id="theme">
-                <option value="light" data-i18nid="light">LIGHT</option>
-                <option value="night" data-i18nid="night">NIGHT</option>
-                <option value="dark" data-i18nid="dark">DARK</option>
-                <option value="material" data-i18nid="material">MATERIAL</option>
+                <option value="light" data-i18nid="light">Light</option>
+                <option value="night" data-i18nid="night">Night</option>
+                <option value="dark" data-i18nid="dark">Dark</option>
+                <option value="material" data-i18nid="material">Material</option>
             </select>
-        </div>
+
     </section>
 
     <script src="i18n.js"></script>

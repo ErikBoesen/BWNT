@@ -46,18 +46,26 @@ body {
 #date {
     font-size: 2.4em;
 }
-.light { background: white; }
-.light #clock,
-.light #date { color: #333; }
 
-.dark { background: #333; }
-.dark #clock,
-.dark #date { color: #111; }
+.light {
+	background-color: #FFFFFF;
+	color: #333333;
+}
 
-.night { background: #222; }
-.night #clock,
-.night #date { color: white; }
+.dark {
+	background-color: #333333;
+	color: #000000;
+}
 
-.material { background: #263238; }
-.material #clock,
-.material #date { color: white; text-shadow: 4px 4px 10px rgba(0,0,0,.2); }
+.night {
+	background-color: #212121;
+	color: #FAFAFA;
+}
+
+.material {
+	background-color: #263238;
+	color: #FAFAFA;
+}
+
+.material #date,
+.material #clock { text-shadow: 4px 4px 10px rgba(0,0,0,.2); }
