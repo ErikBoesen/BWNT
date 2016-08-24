@@ -51,7 +51,7 @@ var newtab = (function() {
 		}
 		//Clear date view
 		if(!this.show_date)
-			this._date_elem.innerHTML = '';
+			this._date_elem.textContent = '';
 	}
 
 	//Updates internal date and time to the current one
@@ -85,9 +85,9 @@ var newtab = (function() {
 
 	// Fill in all visible widgets
 	Clock.prototype.show = function() {
-		this._clock_elem.innerHTML = this.hour + ':' + this.minute;
+		this._clock_elem.textContent = this.hour + ':' + this.minute;
 		if (this.show_date)
-			this._date_elem.innerHTML = this.weekday + ', ' + this.month + ' ' + this.day;
+			this._date_elem.textContent = this.weekday + ', ' + this.month + ' ' + this.day;
 	};
 
 	Clock.prototype.start = function() {

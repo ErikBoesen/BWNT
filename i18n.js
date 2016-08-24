@@ -10,6 +10,6 @@ function translateDocument() {
 		json_id = to_translate[i].dataset.i18nid;
 		new_text = chrome.i18n.getMessage(json_id);
 		if(new_text !== "")
-			to_translate[i].innerText = new_text;
+			to_translate[i].textContent = new_text;
 	}
 }
