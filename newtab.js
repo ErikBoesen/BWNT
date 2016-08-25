@@ -141,4 +141,7 @@ var newtab = (function() {
 
 })();
 
-var clock = (new newtab.Clock());
+var clock;
+window.addEventListener('DOMContentLoaded',function() {
+	clock = new newtab.Clock();
+});

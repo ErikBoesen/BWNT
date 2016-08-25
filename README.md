@@ -1,5 +1,5 @@
 # BW New Tab Page
-![Screenshot 1](screen1.png) ![Screenshot 2](screen2.png) ![Screenshot 3](screen3.png) ![Screenshot 4](screen4.png)
+![Screenshot 1](screenshots/screen1.png) ![Screenshot 2](screenshots/screen2.png) ![Screenshot 3](screenshots/screen3.png) ![Screenshot 4](screenshots/screen4.png)
 
 Gorgeous hyperminimalistic black & white New Tab Page.
 

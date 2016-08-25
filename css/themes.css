@@ -1,0 +1,70 @@
+/******************\
+|     -THEMES-     |
+\******************/
+
+/* Light */
+.light,
+.light option,
+.light .switch input[type="checkbox"] + label:after,
+.light .checkbox input[type="checkbox"] + label:before {
+	background-color: #FFFFFF;
+	color: #333333;
+}
+.light .switch input[type="checkbox"] + label:before,
+.light .switch input[type="checkbox"] + label:after,
+.light .checkbox input[type="checkbox"] + label:before,
+.light .checkbox input[type="checkbox"] + label:after {
+	border-color: #333333;
+}
+
+/* Dark */
+.dark,
+.dark option,
+.dark .switch input[type="checkbox"] + label:after,
+.dark .checkbox input[type="checkbox"] + label:before {
+	background-color: #333333;
+}
+.dark select,
+.dark .switch input[type="checkbox"] + label:before,
+.dark .switch input[type="checkbox"] + label:after,
+.dark .checkbox input[type="checkbox"] + label:before,
+.dark .checkbox input[type="checkbox"] + label:after {
+	border-color: #000000;
+	color: #000000;
+}
+
+/* Night */
+.night,
+.night option,
+.night .switch input[type="checkbox"] + label:after,
+.night .checkbox input[type="checkbox"] + label:before {
+	background-color: #212121;
+	color: #FAFAFA;
+}
+.night select,
+.night .switch input[type="checkbox"] + label:before,
+.night .switch input[type="checkbox"] + label:after,
+.night .checkbox input[type="checkbox"] + label:before,
+.night .checkbox input[type="checkbox"] + label:after {
+	border-color: #FAFAFA;
+}
+
+/* Material */
+.material,
+.material option,
+.material .switch input[type="checkbox"] + label:after,
+.material .checkbox input[type="checkbox"] + label:before {
+	background-color: #263238;
+	color: #FAFAFA;
+}
+.material select,
+.material .switch input[type="checkbox"] + label:before,
+.material .switch input[type="checkbox"] + label:after,
+.material .checkbox input[type="checkbox"] + label:before,
+.material .checkbox input[type="checkbox"] + label:after {
+	border-color: #FAFAFA;
+}
+.material #date,
+.material #clock {
+	text-shadow: 2px 2px 8px rgba(0,0,0,.2);
+}
