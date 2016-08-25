@@ -16,17 +16,19 @@ html, body { height: 100%; }
 body {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
+
     margin: 0;
-    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
     cursor: default;
     -webkit-user-select: none;
     -webkit-touch-callout: none;
     user-select: none;
     -webkit-font-smoothing: antialiased;
+
 	transition-duration: .2s;
 	transition-property: background-color, color;
 }

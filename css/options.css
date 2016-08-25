@@ -24,6 +24,7 @@ section {
 	align-items: center;
 	flex-direction: column;
 	font-size: 1.3em;
+	flex-shrink: 0;
 }
 .options, .options select {
 	text-transform: uppercase;
