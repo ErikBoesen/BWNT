@@ -46,7 +46,8 @@ section {
 	border-style: solid;
 	border-color: inherit;
 	cursor: pointer;
-	transition-duration: .1s;
+	transition-duration: .2s;
+	transition-property: none;
 }
 
 /*Checkbox label*/
@@ -65,6 +66,7 @@ section {
 	width: 22px;
 	height: 22px;
 	border-radius: 50%;
+	transition-property: background-color, border-color;
 }
 /*Check*/
 .checkbox input[type="checkbox"] + label:after {
@@ -74,7 +76,7 @@ section {
 	height: 6px;
 	border-top: none;
 	border-right: none;
-	transition-property: transform, opacity;
+	transition-property: transform, opacity, border-color;
 }
 
 /*Checked*/
@@ -107,6 +109,7 @@ section {
 	height: 0px;
 	width: 40px;
 	border-radius: 2px;
+	transition-property: border-color;
 }
 /*Switch position*/
 .switch input[type="checkbox"] + label:after {
@@ -116,7 +119,7 @@ section {
 	height: 22px;
 	border-radius: 50%;
 	background-color: #FFFFFF;
-	transition-property: right;
+	transition-property: right, background-color, border-color;
 }
 
 /* Switch on*/
