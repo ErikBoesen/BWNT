@@ -31,6 +31,9 @@ body {
 
 	transition-duration: .2s;
 	transition-property: background-color, color;
+
+	background-position: center center;
+	background-size: cover;
 }
 #clock {
     font-size: 12em;

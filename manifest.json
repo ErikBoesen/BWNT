@@ -12,5 +12,8 @@
 	"chrome_url_overrides": {
 		"newtab": "newtab.html"
 	},
-	"options_page": "options.html"
+	"options_page": "options.html",
+	"permissions" : [
+		"storage"
+	]
 }

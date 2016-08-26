@@ -1,4 +1,4 @@
-var newtab = (function() {
+var newtab = (function() {'use strict'
 	var extension = {};
 
 	const REFRESH_TIME_MS = 500;
@@ -26,17 +26,35 @@ var newtab = (function() {
 		return chrome.i18n.getMessage(id);
 	}
 
+	function readOption(name,callback) {
+		return chrome.storage.local.get(name, callback);
+	}
+
 	function Clock() {
-		Clock_init.call(this);
+		Clock_init_fields.call(this);
+		Clock_init_DOM.call(this);
 		this.load_options();
 		this.start();
 
 		// Automatically update all tabs
 		window.addEventListener('storage', this.load_options.bind(this));
+		chrome.storage.onChanged.addListener(function(changes, namespace) {
+			if (changes.background_image) // If the update is background related
+				this.set_background_image(changes.background_image.newValue);
+		}.bind(this));
+	}
+
+	// Init clock fields at construction
+	function Clock_init_fields() {
+		this._last_theme = 'notheme';
+		this.bg_image = '';
+		readOption('background_image', function(items) {
+			this.set_background_image(items.background_image);
+		}.bind(this));
 	}
 
 	// Init DOM elements
-	function Clock_init() {
+	function Clock_init_DOM() {
 		var clock_container = document.getElementById(CLOCK_ID);
 
 		this._clock_elem = document.createElement('div');
@@ -54,22 +72,46 @@ var newtab = (function() {
 		this.format = localStorage.format ? JSON.parse(localStorage.format) : false;
 		this.show_date = localStorage.show_date ? JSON.parse(localStorage.show_date) : true;
 		this.cycle = localStorage.cycle ? JSON.parse(localStorage.cycle) : true;
-		this.theme = localStorage.theme || 'light';
 
 		this.update();
+
+		if (this.cycle) {
+			this.theme = this.hour >= 6 && this.hour <= 20 ? 'light' : 'night';
+		} else {
+			this.theme = localStorage.theme || 'light';
+		}
+		this.use_bg_image = localStorage.use_bg_image ? JSON.parse(localStorage.use_bg_image) : false;
+
 		Clock_build.call(this);
 		this.show();
 	};
 
+	Clock.prototype.set_background_image = function(data) {
+		this.bg_image = data;
+		if (this.use_bg_image)
+			Clock_background_update.call(this);
+	};
+
+	function Clock_background_update() {
+		var url = '';
+		if (this.use_bg_image) {
+			url = 'url(\'' + this.bg_image + '\')';
+		}
+		document.body.style.backgroundImage = url;
+		document.body.classList.toggle('bgimage',this.use_bg_image);
+	}
+
 	function Clock_build() {
-		// Init theme based on hour if enabled
-		if (this.cycle) {
-			document.body.className = this.hour >= 6 && this.hour <= 20 ? 'light' : 'night';
-		} else {
-			document.body.className = this.theme;
+		// Avoid unnecesary redraws
+		if (this._last_theme !== this.theme) {
+			document.body.classList.remove(this._last_theme);
+			document.body.classList.add(this.theme);
+			this._last_theme = this.theme;
 		}
 
-		//Clear date view
+		Clock_background_update.call(this);
+
+		// Clear date view
 		if (!this.show_date)
 			this._date_elem.textContent = '';
 
@@ -80,7 +122,8 @@ var newtab = (function() {
 	// Updates internal date and time to the current one
 	Clock.prototype.update = function() {
 		var date = new Date(),
-		    h = h12 = date.getHours(),
+		    h = date.getHours(),
+			h12 = h,
 		    m = date.getMinutes();
 
 		// Convert hours above 12 to 12-hour counterparts

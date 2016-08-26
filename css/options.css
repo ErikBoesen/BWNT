@@ -20,14 +20,20 @@ section {
 
 .options {
 	display: flex;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: center;
 	flex-direction: column;
 	font-size: 1.3em;
 	flex-shrink: 0;
 }
-.options, .options select {
+.options > section {
+	align-self: stretch;
+}
+.options label,
+.options input,
+.options select {
 	text-transform: uppercase;
+	vertical-align: middle;
 }
 
 /*Hide default checkbox*/
@@ -130,4 +136,28 @@ section {
 /*Switch off*/
 .switch [type="checkbox"]:not(:checked) + label:after {
 	right: 26px;
+}
+
+/* File inputs */
+input[type="file"] {
+	display: none;
+}
+/* With a label next to it */
+input[type="file"] + label {
+	border-width: 2px;
+	border-style: solid;
+	border-color: inherit;
+	padding: 4px 10px;
+	margin: 4px;
+	display: inline-block;
+	text-align: center;
+	text-transform: uppercase;
+	cursor: pointer;
+	font-weight: bold;
+	box-sizing: border-box;
+	transition-duration: inherit;
+	transition-property: color, border-color;
+}
+input[type="file"]:disabled + label {
+	opacity: 0.5;
 }

@@ -68,3 +68,15 @@
 .material #clock {
 	text-shadow: 2px 2px 8px rgba(0,0,0,.2);
 }
+
+/* When image set as background */
+.bgimage #date,
+.bgimage #clock {
+	text-shadow: 2px 2px 8px rgba(0,0,0,.2);
+}
+.bgimage select,
+.bgimage input[type="file"] + label,
+.bgimage .checkbox input[type="checkbox"] + label:before,
+.bgimage .switch input[type="checkbox"] + label:after {
+	background-color: rgba(255,255,255,.2);
+}
