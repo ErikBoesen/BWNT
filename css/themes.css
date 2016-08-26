@@ -2,6 +2,18 @@
 |     -THEMES-     |
 \******************/
 
+/* Default (no theme) */
+body, select, select option {
+	background-color: #FFFFFF;
+	color: #333333;
+}
+.switch input[type="checkbox"] + label:before,
+.switch input[type="checkbox"] + label:after,
+.checkbox input[type="checkbox"] + label:before,
+.checkbox input[type="checkbox"] + label:after {
+	border-color: #333333;
+}
+
 /* Light */
 .theme-light,
 .theme-light option {
@@ -59,6 +71,20 @@
 .theme-material #date,
 .theme-material #clock {
 	text-shadow: 2px 2px 8px rgba(0,0,0,.2);
+}
+
+/* Light Blue */
+.theme-lightblue,
+.theme-lightblue option {
+	background-color: #CCCCCC;
+	color: #003366;
+}
+.theme-lightblue select,
+.theme-lightblue .switch input[type="checkbox"] + label:before,
+.theme-lightblue .switch input[type="checkbox"] + label:after,
+.theme-lightblue .checkbox input[type="checkbox"] + label:before,
+.theme-lightblue .checkbox input[type="checkbox"] + label:after {
+	border-color: #003366;
 }
 
 /* When image set as background */
