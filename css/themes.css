@@ -18,7 +18,7 @@
 /* Dark */
 .dark,
 .dark option {
-	background-color: #333333;
+	background-color: #424242;
 	color: #000000;
 }
 .dark select,
@@ -33,20 +33,20 @@
 .night,
 .night option {
 	background-color: #212121;
-	color: #FAFAFA;
+	color: #F5F5F5;
 }
 .night select,
 .night .switch input[type="checkbox"] + label:before,
 .night .switch input[type="checkbox"] + label:after,
 .night .checkbox input[type="checkbox"] + label:before,
 .night .checkbox input[type="checkbox"] + label:after {
-	border-color: #FAFAFA;
+	border-color: #F5F5F5;
 }
 
 /* Material */
 .material,
 .material option {
-	background-color: #263238;
+	background-color: #37474F;
 	color: #FAFAFA;
 }
 .material select,
