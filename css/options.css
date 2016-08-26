@@ -73,7 +73,8 @@ section {
 	width: 22px;
 	height: 22px;
 	border-radius: 50%;
-	transition-property: background-color, border-color;
+	background-color: transparent;
+	transition-property: border-color;
 }
 /*Check*/
 .checkbox input[type="checkbox"] + label:after {
@@ -112,11 +113,13 @@ section {
 /*Switch background*/
 .switch input[type="checkbox"] + label:before {
 	top: 15px;
-	right: 6px;
-	height: 0px;
-	width: 40px;
+	right: 4px;
+	height: 4px;
+	width: 22px;
+	border-top-width: 0px;
+	border-bottom-width: 0px;
 	border-radius: 2px;
-	transition-property: border-color;
+	transition-property: border-right-width, border-left-width, border-color;
 }
 /*Switch position*/
 .switch input[type="checkbox"] + label:after {
@@ -125,15 +128,22 @@ section {
 	width: 22px;
 	height: 22px;
 	border-radius: 50%;
-	background-color: #FFFFFF;
-	transition-property: right, background-color, border-color;
+	transition-property: right, border-color;
 }
 
 /* Switch on*/
+.switch [type="checkbox"]:checked + label:before {
+	border-left-width: 24px;
+	border-right-width: 2px;
+}
 .switch input[type="checkbox"]:checked + label:after {
 }
 
 /*Switch off*/
+.switch [type="checkbox"]:not(:checked) + label:before {
+	border-left-width: 2px;
+	border-right-width: 24px;
+}
 .switch [type="checkbox"]:not(:checked) + label:after {
 	right: 26px;
 }
