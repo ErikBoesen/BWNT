@@ -18,11 +18,11 @@
 
     <section class="options">
         <div class="switch">
-
             <input type="checkbox" id="format"/>
 			<label for="format" data-i18nid="24_hour">24-hour</label>
             <label for="format" data-i18nid="12_hour">12-hour</label>
         </div>
+
         <section>
             <div class="checkbox">
                 <input type="checkbox" id="showDate">
@@ -33,13 +33,14 @@
                 <label for="cycle" data-i18nid="change_theme_daytime">Change theme by time of day</label>
             </div>
         </section>
+		<select id="theme">
+			<option value="theme-light" data-i18nid="light">Light</option>
+			<option value="theme-night" data-i18nid="night">Night</option>
+			<option value="theme-dark" data-i18nid="dark">Dark</option>
+			<option value="theme-material" data-i18nid="material">Material</option>
+			<option value="theme-lightblue">Light Blue</option>
+		</select>
 
-            <select id="theme">
-                <option value="light" data-i18nid="light">Light</option>
-                <option value="night" data-i18nid="night">Night</option>
-                <option value="dark" data-i18nid="dark">Dark</option>
-                <option value="material" data-i18nid="material">Material</option>
-            </select>
 		<section>
 			<div class="checkbox">
 				<input type="checkbox" id="use-bg-img"/>
