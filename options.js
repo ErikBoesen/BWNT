@@ -1,6 +1,7 @@
 (function() {'use strict'
 
-	//Check whether config has been initialized locally
+	// Check whether config has been initialized locally
+	// 'Or' can be done against false values because they are strings
 	function check_init_config() {
 		localStorage.format = localStorage.format || false;
 		localStorage.show_date = localStorage.show_date || true;
@@ -12,39 +13,37 @@
 	check_init_config();
 
 	document.addEventListener('DOMContentLoaded', function() {
-		var format = document.getElementById('format');
-		var show_date = document.getElementById('showDate');
-		var theme = document.getElementById('theme');
-		var cycle = document.getElementById('cycle');
-		var use_background = document.getElementById('use-bg-img');
-		var bg_picker = document.getElementById('bg-img-picker');
+		var format = document.getElementById('format'),
+		    show_date = document.getElementById('showDate'),
+		    theme = document.getElementById('theme'),
+		    cycle = document.getElementById('cycle'),
+		    use_background = document.getElementById('use-bg-img'),
+		    bg_picker = document.getElementById('bg-img-picker');
 
 		enable_file_pickers();
 
 		format.checked = JSON.parse(localStorage.format);
-		format.addEventListener('change',function() {
+		format.addEventListener('change', function() {
 			localStorage.format = format.checked;
 			clock.load_options();
 		});
 
 		show_date.checked = JSON.parse(localStorage.show_date);
-		show_date.addEventListener('change',function() {
+		show_date.addEventListener('change', function() {
 			localStorage.show_date = show_date.checked;
 			clock.load_options();
 		});
 
 		cycle.checked = JSON.parse(localStorage.cycle);
-		cycle.addEventListener('change',function() {
+		cycle.addEventListener('change', function() {
 			localStorage.cycle = cycle.checked;
-			clock.load_options();
-
-			// Enable/disable theme picker if auto theming enabled
 			theme.disabled = cycle.checked;
+			clock.load_options();
 		});
 
 		theme.value = localStorage.theme;
 		theme.disabled = cycle.checked;
-		theme.addEventListener('change',function() {
+		theme.addEventListener('change', function() {
 			localStorage.theme = theme.children[theme.selectedIndex].value;
 			clock.load_options();
 		});

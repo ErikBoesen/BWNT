@@ -18,7 +18,7 @@ var newtab = (function() {'use strict'
 
 	function getMeridiem(hour) {
 		var id;
-		if(hour > 12 || hour === 0) {
+		if (hour > 12 || hour === 0) {
 			id = 'time_pm';
 		} else {
 			id = 'time_am';
@@ -101,6 +101,7 @@ var newtab = (function() {'use strict'
 		document.body.classList.toggle('bgimage',this.use_bg_image);
 	}
 
+	// Build clock from options like changing the theme, or hiding elements
 	function Clock_build() {
 		// Avoid unnecesary redraws
 		if (this._last_theme !== this.theme) {
@@ -163,7 +164,7 @@ var newtab = (function() {'use strict'
 	// Starts clock running
 	Clock.prototype.start = function() {
 		var self = this;
-		if(!this._started_id) {
+		if (!this._started_id) {
 			this._started_id = setInterval(function() {
 				self.update();
 				self.show();
