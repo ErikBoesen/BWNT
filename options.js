@@ -5,7 +5,7 @@
 		localStorage.format = localStorage.format || false;
 		localStorage.show_date = localStorage.show_date || true;
 		localStorage.cycle = localStorage.cycle || true;
-		localStorage.theme = localStorage.theme || 'light';
+		localStorage.theme = localStorage.theme || 'theme-light';
 		localStorage.use_bg_image = localStorage.use_bg_image || false;
 	}
 

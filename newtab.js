@@ -4,6 +4,9 @@ var newtab = (function() {'use strict'
 	const REFRESH_TIME_MS = 500;
 	const CLOCK_ID = 'clock';
 
+	const THEME_DEFAULT = 'theme-light';
+	const THEME_DEFAULT_DARK = 'theme-night';
+
 	// Arrays of month and day names which will be chosen from to build date.
 	const months = ['month_january', 'month_february', 'month_march', 'month_april', 'month_may', 'month_june', 'month_july', 'month_august', 'month_september', 'month_october', 'month_november', 'month_december'];
 	const weekdays = ['day_monday', 'day_tuesday', 'day_wednesday', 'day_thursday', 'day_friday', 'day_saturday', 'day_sunday'];
@@ -76,9 +79,9 @@ var newtab = (function() {'use strict'
 		this.update();
 
 		if (this.cycle) {
-			this.theme = this.hour >= 6 && this.hour <= 20 ? 'light' : 'night';
+			this.theme = this.hour >= 6 && this.hour <= 20 ? THEME_DEFAULT : THEME_DEFAULT_DARK;
 		} else {
-			this.theme = localStorage.theme || 'light';
+			this.theme = localStorage.theme || THEME_DEFAULT;
 		}
 		this.use_bg_image = localStorage.use_bg_image ? JSON.parse(localStorage.use_bg_image) : false;
 

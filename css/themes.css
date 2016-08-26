@@ -3,61 +3,61 @@
 \******************/
 
 /* Light */
-.light,
-.light option {
+.theme-light,
+.theme-light option {
 	background-color: #FFFFFF;
 	color: #333333;
 }
-.light .switch input[type="checkbox"] + label:before,
-.light .switch input[type="checkbox"] + label:after,
-.light .checkbox input[type="checkbox"] + label:before,
-.light .checkbox input[type="checkbox"] + label:after {
+.theme-light .switch input[type="checkbox"] + label:before,
+.theme-light .switch input[type="checkbox"] + label:after,
+.theme-light .checkbox input[type="checkbox"] + label:before,
+.theme-light .checkbox input[type="checkbox"] + label:after {
 	border-color: #333333;
 }
 
 /* Dark */
-.dark,
-.dark option {
+.theme-dark,
+.theme-dark option {
 	background-color: #424242;
 	color: #000000;
 }
-.dark select,
-.dark .switch input[type="checkbox"] + label:before,
-.dark .switch input[type="checkbox"] + label:after,
-.dark .checkbox input[type="checkbox"] + label:before,
-.dark .checkbox input[type="checkbox"] + label:after {
+.theme-dark select,
+.theme-dark .switch input[type="checkbox"] + label:before,
+.theme-dark .switch input[type="checkbox"] + label:after,
+.theme-dark .checkbox input[type="checkbox"] + label:before,
+.theme-dark .checkbox input[type="checkbox"] + label:after {
 	border-color: #000000;
 }
 
 /* Night */
-.night,
-.night option {
+.theme-night,
+.theme-night option {
 	background-color: #212121;
 	color: #F5F5F5;
 }
-.night select,
-.night .switch input[type="checkbox"] + label:before,
-.night .switch input[type="checkbox"] + label:after,
-.night .checkbox input[type="checkbox"] + label:before,
-.night .checkbox input[type="checkbox"] + label:after {
+.theme-night select,
+.theme-night .switch input[type="checkbox"] + label:before,
+.theme-night .switch input[type="checkbox"] + label:after,
+.theme-night .checkbox input[type="checkbox"] + label:before,
+.theme-night .checkbox input[type="checkbox"] + label:after {
 	border-color: #F5F5F5;
 }
 
 /* Material */
-.material,
-.material option {
+.theme-material,
+.theme-material option {
 	background-color: #37474F;
 	color: #FAFAFA;
 }
-.material select,
-.material .switch input[type="checkbox"] + label:before,
-.material .switch input[type="checkbox"] + label:after,
-.material .checkbox input[type="checkbox"] + label:before,
-.material .checkbox input[type="checkbox"] + label:after {
+.theme-material select,
+.theme-material .switch input[type="checkbox"] + label:before,
+.theme-material .switch input[type="checkbox"] + label:after,
+.theme-material .checkbox input[type="checkbox"] + label:before,
+.theme-material .checkbox input[type="checkbox"] + label:after {
 	border-color: #FAFAFA;
 }
-.material #date,
-.material #clock {
+.theme-material #date,
+.theme-material #clock {
 	text-shadow: 2px 2px 8px rgba(0,0,0,.2);
 }
 
