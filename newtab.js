@@ -3,7 +3,8 @@
 	This program is free software and is licensed under GNU GPLv2.
 */
 
-var newtab = (function() {'use strict'
+var newtab = (function() {
+	'use strict';
 	var extension = {};
 
 	const REFRESH_TIME_MS = 500;
@@ -34,7 +35,7 @@ var newtab = (function() {'use strict'
 		return chrome.i18n.getMessage(id);
 	}
 
-	function readOption(name,callback) {
+	function readOption(name, callback) {
 		return chrome.storage.local.get(name, callback);
 	}
 
@@ -106,7 +107,7 @@ var newtab = (function() {'use strict'
 			url = 'url(\'' + this.bg_image + '\')';
 		}
 		document.body.style.backgroundImage = url;
-		document.body.classList.toggle('bgimage',this.use_bg_image);
+		document.body.classList.toggle('bgimage', this.use_bg_image);
 	}
 
 	// Build clock from options like changing the theme, or hiding elements
@@ -131,9 +132,9 @@ var newtab = (function() {'use strict'
 	// Updates internal date and time to the current one
 	Clock.prototype.update = function() {
 		var date = new Date(),
-		    h = date.getHours(),
+			h = date.getHours(),
 			h12 = h,
-		    m = date.getMinutes();
+			m = date.getMinutes();
 
 		// Convert hours above 12 to 12-hour counterparts
 		if (h12 > 12) h12 -= 12;
@@ -194,6 +195,6 @@ var newtab = (function() {'use strict'
 })();
 
 var clock;
-window.addEventListener('DOMContentLoaded',function() {
+window.addEventListener('DOMContentLoaded', function() {
 	clock = new newtab.Clock();
 });

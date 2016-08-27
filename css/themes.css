@@ -15,28 +15,28 @@
 body,
 select,
 select option {
-    background-color: #FFFFFF;
-    color: #333333;
+    background-color: white;
+    color: #333;
 }
 .switch input[type="checkbox"] + label:before,
 .switch input[type="checkbox"] + label:after,
 .checkbox input[type="checkbox"] + label:before,
 .checkbox input[type="checkbox"] + label:after {
-    border-color: #333333;
+    border-color: #333;
 }
 
 /* Light */
 
 .theme-light,
 .theme-light option {
-    background-color: #FFFFFF;
-    color: #333333;
+    background-color: white;
+    color: #333;
 }
 .theme-light .switch input[type="checkbox"] + label:before,
 .theme-light .switch input[type="checkbox"] + label:after,
 .theme-light .checkbox input[type="checkbox"] + label:before,
 .theme-light .checkbox input[type="checkbox"] + label:after {
-    border-color: #333333;
+    border-color: #333;
 }
 
 /* Dark */
@@ -44,14 +44,14 @@ select option {
 .theme-dark,
 .theme-dark option {
     background-color: #424242;
-    color: #000000;
+    color: black;
 }
-.theme-dark select,
+.theme-dark .select,
 .theme-dark .switch input[type="checkbox"] + label:before,
 .theme-dark .switch input[type="checkbox"] + label:after,
 .theme-dark .checkbox input[type="checkbox"] + label:before,
 .theme-dark .checkbox input[type="checkbox"] + label:after {
-    border-color: #000000;
+    border-color: black;
 }
 
 /* Night */
@@ -61,7 +61,7 @@ select option {
     background-color: #212121;
     color: #F5F5F5;
 }
-.theme-night select,
+.theme-night .select,
 .theme-night .switch input[type="checkbox"] + label:before,
 .theme-night .switch input[type="checkbox"] + label:after,
 .theme-night .checkbox input[type="checkbox"] + label:before,
@@ -76,7 +76,7 @@ select option {
     background-color: #37474F;
     color: #FAFAFA;
 }
-.theme-material select,
+.theme-material .select,
 .theme-material .switch input[type="checkbox"] + label:before,
 .theme-material .switch input[type="checkbox"] + label:after,
 .theme-material .checkbox input[type="checkbox"] + label:before,
@@ -92,10 +92,10 @@ select option {
 
 .theme-lightblue,
 .theme-lightblue option {
-    background-color: #CCCCCC;
+    background-color: #ccc;
     color: #003366;
 }
-.theme-lightblue select,
+.theme-lightblue .select,
 .theme-lightblue .switch input[type="checkbox"] + label:before,
 .theme-lightblue .switch input[type="checkbox"] + label:after,
 .theme-lightblue .checkbox input[type="checkbox"] + label:before,
@@ -109,7 +109,7 @@ select option {
 .bgimage #clock {
     text-shadow: 2px 2px 8px rgba(0, 0, 0, .2);
 }
-.bgimage select,
+.bgimage .select,
 .bgimage input[type="file"] + label,
 .bgimage .checkbox input[type="checkbox"] + label:before,
 .bgimage .switch input[type="checkbox"] + label:after {
