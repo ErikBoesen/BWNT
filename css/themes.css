@@ -94,6 +94,9 @@ body, select, select option {
 }
 
 /* When image set as background */
+.bgimage #container {
+	opacity: 0; /* Initial state, will fade in */
+}
 .bgimage #date,
 .bgimage #clock {
 	text-shadow: 2px 2px 8px rgba(0,0,0,.2);

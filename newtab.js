@@ -39,8 +39,8 @@ var newtab = (function() {'use strict'
 	}
 
 	function Clock() {
-		Clock_init_fields.call(this);
 		Clock_init_DOM.call(this);
+		Clock_init_fields.call(this);
 		this.load_options();
 		this.start();
 
@@ -56,9 +56,26 @@ var newtab = (function() {'use strict'
 	function Clock_init_fields() {
 		this._last_theme = 'notheme';
 		this.bg_image = '';
+		// First time background load
 		readOption('background_image', function(items) {
+			Clock_start_background_animation.call(this,items.background_image);
 			this.set_background_image(items.background_image);
 		}.bind(this));
+	}
+
+	// Show the hidden contents (relying on css effects) when the image
+	// is loaded or in a maximum period of time to avoid bg splash
+	// For dark unknown reasons, recieving the url as parameter is faster
+	// than getting it from this. It just works.
+	function Clock_start_background_animation(url) {
+		var img = new Image();
+		img.onload = _make_visible.bind(this);
+		img.src = url;
+
+		function _make_visible() {
+			this._bg_elem.style.opacity = '1';
+		}
+		window.setTimeout(_make_visible.bind(this), 1000); // Max period of time
 	}
 
 	// Init DOM elements
@@ -73,6 +90,7 @@ var newtab = (function() {'use strict'
 		clock_container.appendChild(this._meridiem_elem);
 
 		this._date_elem = document.getElementById('date');
+		this._bg_elem = document.getElementById('container');
 	}
 
 	// Sync local options with localStorage
@@ -105,7 +123,7 @@ var newtab = (function() {'use strict'
 		if (this.use_bg_image) {
 			url = 'url(\'' + this.bg_image + '\')';
 		}
-		document.body.style.backgroundImage = url;
+		this._bg_elem.style.backgroundImage = url;
 		document.body.classList.toggle('bgimage',this.use_bg_image);
 	}
 
@@ -173,7 +191,7 @@ var newtab = (function() {'use strict'
 	Clock.prototype.start = function() {
 		var self = this;
 		if (!this._started_id) {
-			this._started_id = setInterval(function() {
+			this._started_id = window.setInterval(function() {
 				self.update();
 				self.show();
 			}, REFRESH_TIME_MS);
@@ -183,7 +201,7 @@ var newtab = (function() {'use strict'
 	// Stops clock from running
 	Clock.prototype.stop = function() {
 		if (this._started_id) {
-			clearInterval(this._started_id);
+			window.clearInterval(this._started_id);
 			this._started_id = null;
 		}
 	};
