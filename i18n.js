@@ -1,3 +1,8 @@
+/*
+	Copyright (C) Germán Franco Dorca
+	This program is free software and is licensed under GNU GPLv2.
+*/
+
 (function() { 'use strict'
 
 	document.addEventListener('DOMContentLoaded', translateDocument);
