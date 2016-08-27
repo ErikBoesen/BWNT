@@ -2,43 +2,55 @@
 <html>
 
 <head>
-    <title>New Tab Options</title>
-    <link rel="stylesheet" href="newtab.css">
-    <link rel="stylesheet" href="options.css">
+    <title data-i18nid="options_title">New Tab Options</title>
+
+    <link rel="stylesheet" href="css/newtab.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/options.css">
+
+    <script src="i18n.js"></script>
+    <script src="newtab.js"></script>
+    <script src="options.js"></script>
 </head>
 
 <body>
     <div id="clock"></div>
     <div id="date"></div>
-    <div class="switch">
-        <p>24-hour</p>
-        <input type="checkbox" id="format">
-        <label for="format"></label>
-        <p>12-hour</p>
-    </div>
-    <section>
-        <div class="checkbox">
-            <input type="checkbox" id="showDate">
-            <label for="showDate"></label>
-            <p>Show date</p>
-        </div>
-        <div class="checkbox">
-            <input type="checkbox" id="cycle">
-            <label for="cycle"></label>
-            <p>Change theme by time of day</p>
-        </div>
-    </section>
-    <div class="select">
-        <select id="theme">
-            <option value="light">Light</option>
-            <option value="night">Night</option>
-            <option value="dark">Dark</option>
-            <option value="material">Material</option>
-        </select>
-    </div>
 
-    <script src="newtab.js"></script>
-    <script src="options.js"></script>
+    <section class="options">
+        <div class="switch">
+            <input type="checkbox" id="format">
+            <label for="format" data-i18nid="24_hour">24-hour</label>
+            <label for="format" data-i18nid="12_hour">12-hour</label>
+        </div>
+
+        <section>
+            <div class="checkbox">
+                <input type="checkbox" id="showDate">
+                <label for="showDate" data-i18nid="show_date">Show date</label>
+            </div>
+            <div class="checkbox">
+                <input type="checkbox" id="cycle">
+                <label for="cycle" data-i18nid="change_theme_daytime">Change theme by time of day</label>
+            </div>
+        </section>
+        <select id="theme">
+            <option value="theme-light" data-i18nid="light">Light</option>
+            <option value="theme-night" data-i18nid="night">Night</option>
+            <option value="theme-dark" data-i18nid="dark">Dark</option>
+            <option value="theme-material" data-i18nid="material">Material</option>
+            <option value="theme-lightblue" data-i18nid="lightblue">Light Blue</option>
+        </select>
+
+        <section>
+            <div class="checkbox">
+                <input type="checkbox" id="use-bg-img">
+                <label for="use-bg-img" data-i18nid="use_bg_image">Use a background image</label>
+            </div>
+        </section>
+        <input type="file" id="bg-img-picker" accept="image/*" placeholder="Select an image">
+
+    </section>
 </body>
 
 </html>

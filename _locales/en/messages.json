@@ -26,10 +26,14 @@
 	"options_title": { "message" : "New Tab Options"},
 	"12_hour": { "message" : "12-hour"},
 	"24_hour": { "message" : "24-hour"},
+	"time_am" : { "message" : "am"},
+	"time_pm" : { "message" : "pm"},
 	"show_date": { "message" : "Show date"},
 	"change_theme_daytime": { "message" : "Change theme by time of day"},
+	"use_bg_image": { "message" : "Use a background image"},
 	"light": { "message" : "Light"},
 	"night": { "message" : "Night"},
 	"dark": { "message" : "Dark"},
-	"material": { "message" : "Material"}
+	"material": { "message" : "Material"},
+	"lightblue": { "message" : "Light blue"}
 }

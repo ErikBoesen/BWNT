@@ -1,6 +1,6 @@
 {
 	"extension_name" : { "message": "BWNT - Nouvel Onglet" },
-	"extension_description" : { "message": "Un magnifique thème minimaliste en noir & blanc pour la page Nouvel Onglet." },
+	"extension_description" : { "message": "Un magnifique th\u00E8me minimaliste en noir & blanc pour la page Nouvel Onglet." },
 
 	"day_monday" : { "message": "Lundi" },
 	"day_tuesday" : { "message": "Mardi" },
@@ -11,25 +11,29 @@
 	"day_sunday" : { "message": "Dimanche" },
 
 	"month_january" : { "message": "Janvier" },
-	"month_february" : { "message": "Février" },
+	"month_february" : { "message": "F\u00E9vrier" },
 	"month_march" : { "message": "Mars" },
 	"month_april" : { "message": "Avril" },
 	"month_may" : { "message": "Mai" },
 	"month_june" : { "message": "Juin" },
 	"month_july" : { "message": "Juillet" },
-	"month_august" : { "message": "Août" },
+	"month_august" : { "message": "Ao\u00FBt" },
 	"month_september" : { "message": "Septembre" },
 	"month_october" : { "message": "Octobre" },
 	"month_november" : { "message": "Novembre" },
-	"month_december" : { "message": "Décembre" },
+	"month_december" : { "message": "D\u00E9cembre" },
 
 	"options_title": { "message" : "Options pour la page Nouvel Onglet"},
 	"12_hour": { "message" : "12-heures"},
 	"24_hour": { "message" : "24-heures"},
+	"time_am" : { "message" : "am"},
+	"time_pm" : { "message" : "pm"},
 	"show_date": { "message" : "Afficher la date"},
 	"change_theme_daytime": { "message" : "Changer le theme en fonction du temps du jour"},
+	"use_bg_image": { "message" : "Use a background image"},
 	"light": { "message" : "Clair"},
 	"night": { "message" : "Nuit"},
-	"dark": { "message" : "Foncé"},
-	"material": { "message" : "Material"}
+	"dark": { "message" : "Fonc\u00E9"},
+	"material": { "message" : "Material"},
+	"lightblue": { "message" : "Bleu clair"}
 }
