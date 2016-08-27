@@ -2,22 +2,24 @@
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 300;
-    src: local('Roboto Light'), local('Roboto-Light'), url(Roboto-Light.woff2) format('woff2');
+    src: local('Roboto Light'), local('Roboto-Light'), url('/res/fonts/Roboto-Light.woff2') format('woff2');
     unicode-range: U+0000-00FF;
 }
 @font-face {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 100;
-    src: local('Roboto Thin'), local('Roboto-Thin'), url(Roboto-Thin.woff2) format('woff2');
+    src: local('Roboto Thin'), local('Roboto-Thin'), url('/res/fonts/Roboto-Thin.woff2') format('woff2');
     unicode-range: U+0000-00FF;
 }
-html, body { height: 100%; }
+html,
+body {
+    height: 100%;
+}
 body {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     margin: 0;
-    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,27 +29,26 @@ body {
     -webkit-touch-callout: none;
     user-select: none;
     -webkit-font-smoothing: antialiased;
+    transition-duration: .2s;
+    transition-property: background-color, color;
+    background-position: center center;
+    background-size: cover;
 }
 #clock {
     font-size: 12em;
     line-height: 1;
     font-weight: 100;
 }
+#clock > div {
+    display: inline-block;
+}
+#clock .meridiem {
+    font-size: 20%;
+    font-weight: initial;
+    text-transform: uppercase;
+    width: 1.5em;
+    margin-right: -1.5em;
+}
 #date {
     font-size: 2.4em;
 }
-.light { background: white; }
-.light #clock,
-.light #date { color: #333; }
-
-.dark { background: #333; }
-.dark #clock,
-.dark #date { color: #111; }
-
-.night { background: #222; }
-.night #clock,
-.night #date { color: white; }
-
-.material { background: #263238; }
-.material #clock,
-.material #date { color: white; text-shadow: 4px 4px 10px rgba(0,0,0,.2); }

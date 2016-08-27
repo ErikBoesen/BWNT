@@ -1,7 +1,8 @@
 * {
     transition: .3s;
 }
-p, select {
+p,
+select {
     font-size: 1.3em;
     display: inline-block;
     text-transform: uppercase;

@@ -26,10 +26,14 @@
 	"options_title": { "message" : "Opciones nueva pesta\u00F1a"},
 	"12_hour": { "message" : "12-horas"},
 	"24_hour": { "message" : "24-horas"},
+	"time_am" : { "message" : "am"},
+	"time_pm" : { "message" : "pm"},
 	"show_date": { "message" : "Mostrar fecha"},
 	"change_theme_daytime": { "message" : "Cambiar el tema seg\u00FAn la hora del d\u00EDa"},
+	"use_bg_image": { "message" : "Usar una imagen de fondo"},
 	"light": { "message" : "Claro"},
 	"night": { "message" : "Noche"},
 	"dark": { "message" : "Oscuro"},
-	"material": { "message" : "Material"}
+	"material": { "message" : "Material"},
+	"lightblue": { "message" : "Azul claro"}
 }

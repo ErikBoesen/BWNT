@@ -1,0 +1,191 @@
+/*
+	Copyright (C) Germán Franco Dorca
+	Designed by Erik Boesen
+	This program is free software and is licensed under GNU GPLv2.
+*/
+
+select {
+    padding: 4px;
+    margin: 4px;
+    border: solid 2px #333;
+    cursor: pointer;
+    text-align: center;
+    user-select: none;
+    outline: none;
+    color: inherit;
+    background-color: inherit;
+    font-size: inherit;
+}
+select:disabled {
+    opacity: 0.5;
+}
+section {
+    margin-top: 10px;
+}
+.options {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    font-size: 1.3em;
+    flex-shrink: 0;
+}
+.options > section {
+    align-self: stretch;
+}
+.options label,
+.options input,
+.options select {
+    text-transform: uppercase;
+    vertical-align: middle;
+}
+
+/*Hide default checkbox*/
+
+.checkbox input[type="checkbox"],
+.switch input[type="checkbox"] {
+    display: none;
+}
+.checkbox input[type="checkbox"] + label:before,
+.checkbox input[type="checkbox"] + label:after,
+.switch input[type="checkbox"] + label:before,
+.switch input[type="checkbox"] + label:after {
+    content: '';
+    position: absolute;
+    display: block;
+    border-width: 2px;
+    border-style: solid;
+    border-color: inherit;
+    cursor: pointer;
+    transition-duration: .2s;
+    transition-property: none;
+}
+
+/*Checkbox label*/
+
+.checkbox input[type="checkbox"] + label {
+    position: relative;
+    padding-left: 36px;
+    display: inline-block;
+    line-height: 34px;
+    min-height: 34px;
+}
+
+/*Border*/
+
+.checkbox input[type="checkbox"] + label:before {
+    top: 4px;
+    left: 4px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: transparent;
+    transition-property: border-color;
+}
+
+/*Check*/
+
+.checkbox input[type="checkbox"] + label:after {
+    top: 11px;
+    left: 11px;
+    width: 10px;
+    height: 6px;
+    border-top: none;
+    border-right: none;
+    transition-property: transform, opacity, border-color;
+}
+
+/*Checked*/
+
+.checkbox input[type="checkbox"]:checked + label:after {
+    opacity: 1;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+/*Unchecked*/
+
+.checkbox input[type="checkbox"]:not(:checked) + label:after {
+    opacity: 0;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+
+/*Switch label*/
+
+.switch input[type="checkbox"] + label {
+    position: relative;
+    padding-right: 64px;
+    display: inline-block;
+    line-height: 34px;
+    min-height: 34px;
+}
+
+/*Switch background*/
+
+.switch input[type="checkbox"] + label:before {
+    top: 15px;
+    right: 4px;
+    height: 4px;
+    width: 22px;
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+    border-radius: 2px;
+    transition-property: border-right-width, border-left-width, border-color;
+}
+
+/*Switch position*/
+
+.switch input[type="checkbox"] + label:after {
+    top: 4px;
+    right: 4px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    transition-property: right, border-color;
+}
+
+/* Switch on*/
+
+.switch [type="checkbox"]:checked + label:before {
+    border-left-width: 24px;
+    border-right-width: 2px;
+}
+.switch input[type="checkbox"]:checked + label:after {}
+
+/*Switch off*/
+
+.switch [type="checkbox"]:not(:checked) + label:before {
+    border-left-width: 2px;
+    border-right-width: 24px;
+}
+.switch [type="checkbox"]:not(:checked) + label:after {
+    right: 26px;
+}
+
+/* File inputs */
+
+input[type="file"] {
+    display: none;
+}
+
+/* With a label next to it */
+
+input[type="file"] + label {
+    border-width: 2px;
+    border-style: solid;
+    border-color: inherit;
+    padding: 4px 10px;
+    margin: 4px;
+    display: inline-block;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: bold;
+    box-sizing: border-box;
+    transition-duration: inherit;
+    transition-property: color, border-color;
+}
+input[type="file"]:disabled + label {
+    opacity: 0.5;
+}
