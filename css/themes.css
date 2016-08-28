@@ -93,13 +93,9 @@ body, select, select option {
 	border-color: #003366;
 }
 
-/* When image set as background */
-.bgimage #container {
-	opacity: 0; /* Initial state, will fade in */
-}
 .bgimage #date,
 .bgimage #clock {
-	text-shadow: 2px 2px 8px rgba(0,0,0,.2);
+	text-shadow: 0px 0px 4px rgba(0,0,0,.4);
 }
 .bgimage select,
 .bgimage input[type="file"] + label,

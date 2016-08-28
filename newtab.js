@@ -63,10 +63,9 @@ var newtab = (function() {'use strict'
 		}.bind(this));
 	}
 
-	// Show the hidden contents (relying on css effects) when the image
-	// is loaded or in a maximum period of time to avoid bg splash
+	// Show the hidden contents when the image is loaded
 	// For dark unknown reasons, recieving the url as parameter is faster
-	// than getting it from this. It just works.
+	// than getting it from 'this'. It just works.
 	function Clock_start_background_animation(url) {
 		var img = new Image();
 		img.onload = _make_visible.bind(this);
@@ -75,7 +74,6 @@ var newtab = (function() {'use strict'
 		function _make_visible() {
 			this._bg_elem.style.opacity = '1';
 		}
-		window.setTimeout(_make_visible.bind(this), 1000); // Max period of time
 	}
 
 	// Init DOM elements
@@ -90,7 +88,7 @@ var newtab = (function() {'use strict'
 		clock_container.appendChild(this._meridiem_elem);
 
 		this._date_elem = document.getElementById('date');
-		this._bg_elem = document.getElementById('container');
+		this._bg_elem = document.getElementById('background-layer');
 	}
 
 	// Sync local options with localStorage
