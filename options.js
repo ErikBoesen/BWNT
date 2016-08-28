@@ -25,7 +25,7 @@
 		    use_background = document.getElementById('use-bg-img'),
 		    bg_picker = document.getElementById('bg-img-picker');
 
-		enable_file_pickers();
+
 
 		format.checked = JSON.parse(localStorage.format);
 		format.addEventListener('change', function() {
@@ -61,6 +61,7 @@
 			clock.load_options();
 		});
 
+		bg_picker.placeholder = chrome.i18n.getMessage('select_image');
 		bg_picker.addEventListener('change', function() {
 			var selected = bg_picker.files[0];
 			if (selected) {
@@ -69,6 +70,8 @@
 				});
 			}
 		});
+
+		enable_file_pickers();
 
 	}); // End of DOMContentLoaded
 
@@ -98,11 +101,11 @@
 		var label, curr_input;
 
 		// Change visible title on change
-		function _change_value() {
+		function _update_value() {
 			if (this.value)
-				label.textContent = this.files[0].name;
+				this.label_elem.textContent = this.files[0].name;
 			else
-				label.textContent = this.placeholder;
+				this.label_elem.textContent = this.placeholder;
 		}
 
 		for(var i=0,len=inputs.length; i<len; i++) {
@@ -111,7 +114,8 @@
 			label.textContent = curr_input.placeholder;
 			label.setAttribute('for', curr_input.id);
 			curr_input.parentNode.insertBefore(label, curr_input.nextSibling);
-			curr_input.addEventListener('change', _change_value.bind(curr_input, label));
+			curr_input.addEventListener('change', _update_value.bind(curr_input));
+			curr_input.label_elem = label;
 		} // End of for-loop
 	}
 
