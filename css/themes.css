@@ -9,10 +9,11 @@
 \******************/
 
 /* Default (no theme) */
-body, select, select option {
+body, select option {
 	background-color: #FFFFFF;
 	color: #333333;
 }
+select,
 .switch input[type="checkbox"] + label:before,
 .switch input[type="checkbox"] + label:after,
 .checkbox input[type="checkbox"] + label:before,
@@ -26,6 +27,7 @@ body, select, select option {
 	background-color: #FFFFFF;
 	color: #333333;
 }
+.theme-light select,
 .theme-light .switch input[type="checkbox"] + label:before,
 .theme-light .switch input[type="checkbox"] + label:after,
 .theme-light .checkbox input[type="checkbox"] + label:before,
