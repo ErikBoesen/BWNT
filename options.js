@@ -3,7 +3,8 @@
 	This program is free software and is licensed under GNU GPLv2.
 */
 
-(function() {'use strict'
+(function() {
+	'use strict';
 
 	// Check whether config has been initialized locally
 	// 'Or' can be done against false values because they are strings
@@ -19,11 +20,11 @@
 
 	document.addEventListener('DOMContentLoaded', function() {
 		var format = document.getElementById('format'),
-		    show_date = document.getElementById('showDate'),
-		    theme = document.getElementById('theme'),
-		    cycle = document.getElementById('cycle'),
-		    use_background = document.getElementById('use-bg-img'),
-		    bg_picker = document.getElementById('bg-img-picker');
+			show_date = document.getElementById('showDate'),
+			theme = document.getElementById('theme'),
+			cycle = document.getElementById('cycle'),
+			use_background = document.getElementById('use-bg-img'),
+			bg_picker = document.getElementById('bg-img-picker');
 
 		enable_file_pickers();
 
@@ -65,7 +66,7 @@
 			var selected = bg_picker.files[0];
 			if (selected) {
 				toDataURL(selected, function(result) {
-					saveToStorage('background_image',result);
+					saveToStorage('background_image', result);
 				});
 			}
 		});
@@ -105,7 +106,7 @@
 				label.textContent = this.placeholder;
 		}
 
-		for(var i=0,len=inputs.length; i<len; i++) {
+		for (var i = 0, len = inputs.length; i < len; i++) {
 			curr_input = inputs[i];
 			label = document.createElement('label');
 			label.textContent = curr_input.placeholder;

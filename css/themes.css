@@ -13,7 +13,6 @@
 /* Default (no theme) */
 
 body,
-select,
 select option {
     background-color: white;
     color: #333;
