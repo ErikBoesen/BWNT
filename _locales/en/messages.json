@@ -1,6 +1,6 @@
 {
 	"extension_name" : { "message": "BWNT - New Tab" },
-	"extension_description" : { "message": "Gorgeous minimalistic black & white New Tab Page." },
+	"extension_description" : { "message": "Minimalist New Tab page." },
 
 	"day_monday" : { "message": "Monday" },
 	"day_tuesday" : { "message": "Tuesday" },
@@ -31,6 +31,7 @@
 	"show_date": { "message" : "Show date"},
 	"change_theme_daytime": { "message" : "Change theme by time of day"},
 	"use_bg_image": { "message" : "Use a background image"},
+	"select_image": { "message" : "Select an image"},
 	"light": { "message" : "Light"},
 	"night": { "message" : "Night"},
 	"dark": { "message" : "Dark"},

@@ -1,6 +1,6 @@
 {
 	"extension_name" : { "message": "BWNT - Nueva Pesta\u00F1a" },
-	"extension_description" : { "message": "Bella y minimalista nueva pesta\u00F1a en blanco y negro." },
+	"extension_description" : { "message": "Minimalista página Nueva Pesta\u00F1a." },
 
 	"day_monday" : { "message": "Lunes" },
 	"day_tuesday" : { "message": "Martes" },
@@ -29,8 +29,9 @@
 	"time_am" : { "message" : "am"},
 	"time_pm" : { "message" : "pm"},
 	"show_date": { "message" : "Mostrar fecha"},
-	"change_theme_daytime": { "message" : "Cambiar el tema seg\u00FAn la hora del d\u00EDa"},
+	"change_theme_daytime": { "message" : "Cambiar tema seg\u00FAn la hora del d\u00EDa"},
 	"use_bg_image": { "message" : "Usar una imagen de fondo"},
+	"select_image": { "message" : "Selecciona una imagen"},
 	"light": { "message" : "Claro"},
 	"night": { "message" : "Noche"},
 	"dark": { "message" : "Oscuro"},

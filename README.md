@@ -13,7 +13,7 @@ Minimalist New Tab page for Chromium.
 * Date (can be hidden or shown)
 * 5 beautiful themes: light, night, (full) dark, material and light blue
 * Option to rotate between light and night themes based on time of day
-* Custom background pictures
+* Custom background pictures _(Not recommended sizes > 1MB)_
 * Available in some languages aside from English
 
 ## Installation
