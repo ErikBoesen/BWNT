@@ -31,6 +31,7 @@
 	"show_date": { "message" : "Afficher la date"},
 	"change_theme_daytime": { "message" : "Changer le theme en fonction du temps du jour"},
 	"use_bg_image": { "message" : "Use a background image"},
+	"select_image": { "message" : "Select an image"},
 	"light": { "message" : "Clair"},
 	"night": { "message" : "Nuit"},
 	"dark": { "message" : "Fonc\u00E9"},

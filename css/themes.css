@@ -11,12 +11,11 @@
 
 
 /* Default (no theme) */
-
-body,
-select option {
-    background-color: white;
-    color: #333;
+body, select option {
+	background-color: #FFFFFF;
+	color: #333333;
 }
+select,
 .switch input[type="checkbox"] + label:before,
 .switch input[type="checkbox"] + label:after,
 .checkbox input[type="checkbox"] + label:before,
@@ -31,6 +30,7 @@ select option {
     background-color: white;
     color: #333;
 }
+.theme-light select,
 .theme-light .switch input[type="checkbox"] + label:before,
 .theme-light .switch input[type="checkbox"] + label:after,
 .theme-light .checkbox input[type="checkbox"] + label:before,
@@ -102,11 +102,9 @@ select option {
     border-color: #003366;
 }
 
-/* When image set as background */
-
 .bgimage #date,
 .bgimage #clock {
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, .2);
+	text-shadow: 0px 0px 4px rgba(0,0,0,.4);
 }
 .bgimage .select,
 .bgimage input[type="file"] + label,
