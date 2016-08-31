@@ -9,7 +9,7 @@ var newtab = (function() {'use strict'
 
 	// Arrays of month and day names which will be chosen from to build date.
 	const months = ['month_january', 'month_february', 'month_march', 'month_april', 'month_may', 'month_june', 'month_july', 'month_august', 'month_september', 'month_october', 'month_november', 'month_december'];
-	const weekdays = ['day_monday', 'day_tuesday', 'day_wednesday', 'day_thursday', 'day_friday', 'day_saturday', 'day_sunday'];
+	const weekdays = ['day_sunday', 'day_monday', 'day_tuesday', 'day_wednesday', 'day_thursday', 'day_friday', 'day_saturday'];
 
 	function getDayName(dayNumber) {
 		return chrome.i18n.getMessage(weekdays[dayNumber]);
