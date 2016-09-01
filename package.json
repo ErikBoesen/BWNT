@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "grunt": "^1.0.0",
+    "grunt-contrib-cssmin": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-watch": "latest"
+	}
+}
