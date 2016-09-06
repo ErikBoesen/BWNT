@@ -5,4 +5,5 @@
 # Local folder. Put you local files and tests here
 # where won't be synchronized
 local/
-local/*
+
+node_modules/

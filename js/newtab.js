@@ -7,7 +7,7 @@ var newtab = (function() {
 	'use strict';
 	var extension = {};
 
-	const REFRESH_TIME_MS = 500;
+	const REFRESH_TIME_MS = 1000;
 	const CLOCK_ID = 'clock';
 
 	const THEME_DEFAULT = 'theme-light';
@@ -35,7 +35,7 @@ var newtab = (function() {
 		return chrome.i18n.getMessage(id);
 	}
 
-	function readOption(name, callback) {
+	extension.read_option = function(name,callback) {
 		return chrome.storage.local.get(name, callback);
 	}
 
@@ -58,23 +58,10 @@ var newtab = (function() {
 		this._last_theme = 'notheme';
 		this.bg_image = '';
 		// First time background load
-		readOption('background_image', function(items) {
+		extension.read_option('background_image', function(items) {
 			Clock_start_background_animation.call(this,items.background_image);
 			this.set_background_image(items.background_image);
 		}.bind(this));
-	}
-
-	// Show the hidden contents when the image is loaded
-	// For dark unknown reasons, recieving the url as parameter is faster
-	// than getting it from 'this'. It just works.
-	function Clock_start_background_animation(url) {
-		var img = new Image();
-		img.onload = _make_visible.bind(this);
-		img.src = url;
-
-		function _make_visible() {
-			this._bg_elem.style.opacity = '1';
-		}
 	}
 
 	// Init DOM elements
@@ -84,9 +71,10 @@ var newtab = (function() {
 		this._clock_elem = document.createElement('div');
 		clock_container.appendChild(this._clock_elem);
 
-		this._meridiem_elem = document.createElement('div');
-		this._meridiem_elem.className = 'meridiem';
-		clock_container.appendChild(this._meridiem_elem);
+		var ampm = document.createElement('div');
+		ampm.className = 'meridiem';
+		clock_container.appendChild(ampm);
+		this._meridiem_elem = ampm;
 
 		this._date_elem = document.getElementById('date');
 		this._bg_elem = document.getElementById('background-layer');
@@ -99,7 +87,6 @@ var newtab = (function() {
 		this.cycle = localStorage.cycle ? JSON.parse(localStorage.cycle) : true;
 
 		this.update();
-
 		if (this.cycle) {
 			this.theme = this.hour >= 6 && this.hour <= 20 ? THEME_DEFAULT : THEME_DEFAULT_DARK;
 		} else {
@@ -124,6 +111,23 @@ var newtab = (function() {
 		}
 		this._bg_elem.style.backgroundImage = url;
 		document.body.classList.toggle('bgimage',this.use_bg_image);
+	}
+
+	// Show the hidden contents when the image is loaded
+	// For dark unknown reasons, recieving the url as parameter is faster
+	// than getting it from 'this'. It just works.
+	function Clock_start_background_animation(url) {
+		if(!url) {
+			_make_visible.call(this);
+			return;
+		}
+		var img = new Image();
+		img.onload = _make_visible.bind(this);
+		img.src = url;
+
+		function _make_visible() {
+			this._bg_elem.style.opacity = '1';
+		}
 	}
 
 	// Build clock from options like changing the theme, or hiding elements

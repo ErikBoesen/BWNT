@@ -3,8 +3,7 @@
 	This program is free software and is licensed under GNU GPLv2.
 */
 
-(function() {
-	'use strict';
+(function(newtab) { 'use strict'
 
 	// Check whether config has been initialized locally
 	// 'Or' can be done against false values because they are strings
@@ -13,6 +12,10 @@
 		localStorage.show_date = localStorage.show_date || true;
 		localStorage.cycle = localStorage.cycle || true;
 		localStorage.theme = localStorage.theme || 'theme-light';
+
+		if(typeof localStorage.use_bg_image === 'undefined') {
+			save_to_storage('background_image', '');
+		}
 		localStorage.use_bg_image = localStorage.use_bg_image || false;
 	}
 
@@ -25,8 +28,6 @@
 			cycle = document.getElementById('cycle'),
 			use_background = document.getElementById('use-bg-img'),
 			bg_picker = document.getElementById('bg-img-picker');
-
-
 
 		format.checked = JSON.parse(localStorage.format);
 		format.addEventListener('change', function() {
@@ -67,7 +68,7 @@
 			var selected = bg_picker.files[0];
 			if (selected) {
 				toDataURL(selected, function(result) {
-					saveToStorage('background_image', result);
+					save_to_storage('background_image',result);
 				});
 			}
 		});
@@ -90,7 +91,7 @@
 	}
 
 	// Save data into chrome storage
-	function saveToStorage(name, data) {
+	function save_to_storage(name, data) {
 		var obj = {};
 		obj[name] = data;
 		chrome.storage.local.set(obj);
@@ -120,4 +121,4 @@
 		} // End of for-loop
 	}
 
-})();
+})(newtab);

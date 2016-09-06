@@ -34,6 +34,14 @@ The packaged Google Chrome extension is available [here](https://chrome.google.c
 
 This extension should work out of box. Settings can be configured in the Options link visible in the extensions menu.
 
+## Contributing
+1. Install [npm](https://www.npmjs.com/) on your system.
+2. Install npm packages into your project. Go to the project directory and execute `npm install`.
+3. Execute `grunt`, that will minify your files.
+4. Submit a [GitHub pull request](../../pulls) with your modified and generated minified files too.
+
+> Don't edit minified files, grunt will override them automatically.
+
 --------------------------------------------------------------------------------
 
 ## License
