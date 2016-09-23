@@ -81,9 +81,9 @@ var newtab = (function() {'use strict'
 
 	// Sync local options with localStorage
 	Clock.prototype.load_options = function() {
-		this.format = localStorage.format ? JSON.parse(localStorage.format) : false;
-		this.show_date = localStorage.show_date ? JSON.parse(localStorage.show_date) : true;
-		this.cycle = localStorage.cycle ? JSON.parse(localStorage.cycle) : true;
+		this.format = localStorage.format === 'true'; // Default: false
+		this.show_date = localStorage.show_date !== 'false'; // Default: true
+		this.cycle = localStorage.cycle !== 'false'; // Default: true
 
 		this.update();
 		if (this.cycle) {
@@ -91,7 +91,7 @@ var newtab = (function() {'use strict'
 		} else {
 			this.theme = localStorage.theme || THEME_DEFAULT;
 		}
-		this.use_bg_image = localStorage.use_bg_image ? JSON.parse(localStorage.use_bg_image) : false;
+		this.use_bg_image = localStorage.use_bg_image === 'true';
 
 		Clock_build.call(this);
 		this.show();

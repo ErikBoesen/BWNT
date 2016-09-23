@@ -6,17 +6,18 @@
 (function(newtab) { 'use strict'
 
 	// Check whether config has been initialized locally
-	// 'Or' can be done against false values because they are strings
 	function check_init_config() {
-		localStorage.format = localStorage.format || false;
-		localStorage.show_date = localStorage.show_date || true;
-		localStorage.cycle = localStorage.cycle || true;
+		// Note: 'Or' can be done against false values because they are strings
+		localStorage.format = localStorage.format || 'false';
+		localStorage.show_date = localStorage.show_date || 'true';
+		localStorage.cycle = localStorage.cycle || 'true';
 		localStorage.theme = localStorage.theme || 'theme-light';
 
 		if(typeof localStorage.use_bg_image === 'undefined') {
+			// Init source field inside storage
 			save_to_storage('background_image', '');
 		}
-		localStorage.use_bg_image = localStorage.use_bg_image || false;
+		localStorage.use_bg_image = localStorage.use_bg_image || 'false';
 	}
 
 	check_init_config();
@@ -29,19 +30,19 @@
 		    use_background = document.getElementById('use-bg-img'),
 		    bg_picker = document.getElementById('bg-img-picker');
 
-		format.checked = JSON.parse(localStorage.format);
+		format.checked = localStorage.format === 'true';
 		format.addEventListener('change', function() {
 			localStorage.format = format.checked;
 			clock.load_options();
 		});
 
-		show_date.checked = JSON.parse(localStorage.show_date);
+		show_date.checked = localStorage.show_date === 'true';
 		show_date.addEventListener('change', function() {
 			localStorage.show_date = show_date.checked;
 			clock.load_options();
 		});
 
-		cycle.checked = JSON.parse(localStorage.cycle);
+		cycle.checked = localStorage.cycle === 'true';
 		cycle.addEventListener('change', function() {
 			localStorage.cycle = cycle.checked;
 			theme.disabled = cycle.checked;
@@ -55,7 +56,7 @@
 			clock.load_options();
 		});
 
-		use_background.checked = JSON.parse(localStorage.use_bg_image);
+		use_background.checked = localStorage.use_bg_image === 'true';
 		bg_picker.disabled = !use_background.checked;
 		use_background.addEventListener('change', function() {
 			localStorage.use_bg_image = use_background.checked;
