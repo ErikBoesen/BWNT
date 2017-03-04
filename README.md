@@ -32,15 +32,12 @@ Minimalist New Tab page for Chromium.
 ### Google Chrome Web Store
 The packaged Google Chrome extension is available [here](https://chrome.google.com/webstore/detail/doiinciigjmmlnbehjjjkeoamihggkba).
 
-This extension should work out of box. Settings can be configured in the Options link visible in the extensions menu.
+> This extension should work out of box. Settings can be configured in the _Options_ link visible in the extensions menu.
 
 ## Contributing
-1. Install [npm](https://www.npmjs.com/) on your system.
-2. Install npm packages into your project. Go to the project directory and execute `npm install`.
-3. Execute `grunt`, that will minify your files.
-4. Submit a [GitHub pull request](../../pulls) with your modified and generated minified files too.
+Contributions are accepted via [GitHub pull requests](../../pulls). To add a translation copy the `en` folder inside `_locales` and change the folder name to the new locale code.
 
-> Don't edit minified files, grunt will override them automatically.
+Finally add your name and email into the CONTRIBUTORS file or in the TRANSLATORS file.
 
 --------------------------------------------------------------------------------
 
