@@ -3,7 +3,7 @@
 	This program is free software and is licensed under GNU GPLv2.
 */
 
-var newtab = (function() {'use strict'
+var newtab = (function() {
 	var extension = {};
 
 	const REFRESH_TIME_MS = 1000;
@@ -213,7 +213,4 @@ var newtab = (function() {'use strict'
 
 })();
 
-var clock;
-window.addEventListener('DOMContentLoaded',function() {
-	clock = new newtab.Clock();
-});
+var clock = new newtab.Clock();

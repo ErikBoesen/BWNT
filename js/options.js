@@ -3,7 +3,7 @@
 	This program is free software and is licensed under GNU GPLv2.
 */
 
-(function(newtab) { 'use strict'
+(function(newtab) {
 
 	// Check whether config has been initialized locally
 	function check_init_config() {

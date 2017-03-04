@@ -3,7 +3,7 @@
 	This program is free software and is licensed under GNU GPLv2.
 */
 
-(function() { 'use strict'
+(function() {
 
 	document.addEventListener('DOMContentLoaded', translateDocument);
 
