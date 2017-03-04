@@ -1,6 +1,8 @@
 {
 	"extension_name" : { "message": "BWNT - Nueva Pesta\u00F1a" },
 	"extension_description" : { "message": "Minimalista página Nueva Pesta\u00F1a." },
+	
+	"date_format" : { "message" : "{weekday} {day} de {month}" },
 
 	"day_monday" : { "message": "Lunes" },
 	"day_tuesday" : { "message": "Martes" },
