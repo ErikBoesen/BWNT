@@ -4,7 +4,6 @@
 */
 
 var newtab = (function() {
-	'use strict';
 	var extension = {};
 
 	const REFRESH_TIME_MS = 1000;
@@ -13,26 +12,44 @@ var newtab = (function() {
 	const THEME_DEFAULT = 'theme-light';
 	const THEME_DEFAULT_DARK = 'theme-night';
 
-	// Arrays of month and day names which will be chosen from to build date.
-	const months = ['month_january', 'month_february', 'month_march', 'month_april', 'month_may', 'month_june', 'month_july', 'month_august', 'month_september', 'month_october', 'month_november', 'month_december'];
-	const weekdays = ['day_sunday', 'day_monday', 'day_tuesday', 'day_wednesday', 'day_thursday', 'day_friday', 'day_saturday'];
+	const KEYS = {
+		months : [
+			'month_january',
+			'month_february',
+			'month_march',
+			'month_april',
+			'month_may',
+			'month_june',
+			'month_july',
+			'month_august',
+			'month_september',
+			'month_october',
+			'month_november',
+			'month_december'
+		],
+		weekdays : [
+			'day_sunday',
+			'day_monday',
+			'day_tuesday',
+			'day_wednesday',
+			'day_thursday',
+			'day_friday',
+			'day_saturday'
+		],
+		date_format : 'date_format',
+		time_pm : 'time_pm',
+		time_am : 'time_am'
+	};
 
-	function getDayName(dayNumber) {
-		return chrome.i18n.getMessage(weekdays[dayNumber]);
+	function _(key) {
+		var trans = chrome.i18n.getMessage(key);
+
+		if (trans) return trans;
+		return key;
 	}
 
-	function getMonthName(monthNumber) {
-		return chrome.i18n.getMessage(months[monthNumber]);
-	}
-
-	function getMeridiem(hour) {
-		var id;
-		if (hour > 12 || hour === 0) {
-			id = 'time_pm';
-		} else {
-			id = 'time_am';
-		}
-		return chrome.i18n.getMessage(id);
+	function get_meridiem(hour) {
+		return _(hour > 12 ? KEYS.time_pm : KEYS.time_am);
 	}
 
 	extension.read_option = function(name,callback) {
@@ -62,6 +79,8 @@ var newtab = (function() {
 			Clock_start_background_animation.call(this,items.background_image);
 			this.set_background_image(items.background_image);
 		}.bind(this));
+
+		this.date_pattern = _(KEYS.date_format);
 	}
 
 	// Init DOM elements
@@ -82,9 +101,9 @@ var newtab = (function() {
 
 	// Sync local options with localStorage
 	Clock.prototype.load_options = function() {
-		this.format = localStorage.format ? JSON.parse(localStorage.format) : false;
-		this.show_date = localStorage.show_date ? JSON.parse(localStorage.show_date) : true;
-		this.cycle = localStorage.cycle ? JSON.parse(localStorage.cycle) : true;
+		this.format = localStorage.format === 'true'; // Default: false
+		this.show_date = localStorage.show_date !== 'false'; // Default: true
+		this.cycle = localStorage.cycle !== 'false'; // Default: true
 
 		this.update();
 		if (this.cycle) {
@@ -92,7 +111,7 @@ var newtab = (function() {
 		} else {
 			this.theme = localStorage.theme || THEME_DEFAULT;
 		}
-		this.use_bg_image = localStorage.use_bg_image ? JSON.parse(localStorage.use_bg_image) : false;
+		this.use_bg_image = localStorage.use_bg_image === 'true';
 
 		Clock_build.call(this);
 		this.show();
@@ -149,30 +168,38 @@ var newtab = (function() {
 			this._meridiem_elem.textContent = '';
 	}
 
+	Clock.prototype.get_date_string = function(date) {
+		var month = _(KEYS.months[date.getMonth()]),
+			weekday = _(KEYS.weekdays[date.getDay()]),
+			day = date.getDate();
+
+		return this.date_pattern.replace(/{(month|day|weekday)}/g, function(match, key) {
+			switch (key) {
+				case 'month':   return month;
+				case 'day':     return day;
+				case 'weekday': return weekday;
+				default: match;
+			}
+		});
+	}
+
 	// Updates internal date and time to the current one
 	Clock.prototype.update = function() {
 		var date = new Date(),
-			h = date.getHours(),
-			h12 = h,
-			m = date.getMinutes();
+		    h = date.getHours(),
+        h12,
+		    m = date.getMinutes();
 
-		// Convert hours above 12 to 12-hour counterparts
-		if (h12 > 12) h12 -= 12;
-		// Correct for hour 0
-		else if (h12 === 0) h12 = 12;
+		// Format hour to 12h
+		h12 = h % 12;
+		if (h12 === 0) h12 = 12;
 
-		// If hours are only one digit long, add a leading 0.
-		if (h < 10) h = '0' + h;
-		// If minutes are only one digit long, add a leading 0.
-		if (m < 10) m = '0' + m;
-
-		this.minute = m;
-		this.hour = h;
+		// Add trailing 0 for one digit numbers
+		this.minute = m < 10 ? '0' + m : m;
+		this.hour   = h < 10 ? '0' + h : h;
 		this.hour12 = h12;
-		this.meridiem = getMeridiem(h);
-		this.day = date.getDate();
-		this.weekday = getDayName(date.getDay());
-		this.month = getMonthName(date.getMonth());
+		this.meridiem = get_meridiem(h);
+		this.date = this.get_date_string(date);
 	};
 
 	// Fill in all visible widgets
@@ -187,7 +214,7 @@ var newtab = (function() {
 		this._clock_elem.textContent = h + ':' + this.minute;
 
 		if (this.show_date)
-			this._date_elem.textContent = this.weekday + ', ' + this.month + ' ' + this.day;
+			this._date_elem.textContent = this.date;
 	};
 
 	// Starts clock running
@@ -214,7 +241,4 @@ var newtab = (function() {
 
 })();
 
-var clock;
-window.addEventListener('DOMContentLoaded', function() {
-	clock = new newtab.Clock();
-});
+var clock = new newtab.Clock();

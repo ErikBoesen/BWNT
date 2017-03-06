@@ -1,36 +1,36 @@
+@import url('themes.css');
 @font-face {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 300;
-    src: local('Roboto Light'), local('Roboto-Light'), url('/res/fonts/Roboto-Light.woff2') format('woff2');
-    unicode-range: U+0000-00FF;
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 300;
+	src: local('Roboto Light'), local('Roboto-Light'), url('/res/fonts/Roboto-Light.woff2') format('woff2');
+	unicode-range: U+0000-00FF;
 }
 @font-face {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 100;
-    src: local('Roboto Thin'), local('Roboto-Thin'), url('/res/fonts/Roboto-Thin.woff2') format('woff2');
-    unicode-range: U+0000-00FF;
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 100;
+	src: local('Roboto Thin'), local('Roboto-Thin'), url('/res/fonts/Roboto-Thin.woff2') format('woff2');
+	unicode-range: U+0000-00FF;
 }
-html,
+
+html, body { height: 100%; }
+
 body {
-    height: 100%;
-}
-body {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
 
 	position: relative;
 	margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    cursor: default;
-    -webkit-user-select: none;
-    -webkit-touch-callout: none;
-    user-select: none;
-    -webkit-font-smoothing: antialiased;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	cursor: default;
+	-webkit-user-select: none;
+	-webkit-touch-callout: none;
+	user-select: none;
+	-webkit-font-smoothing: antialiased;
 
 	transition-duration: .2s;
 	transition-property: background-color, color;
@@ -48,9 +48,9 @@ body {
 	background-size: cover;
 }
 #clock {
-    font-size: 12em;
-    line-height: 1;
-    font-weight: 100;
+	font-size: 12em;
+	line-height: 1;
+	font-weight: 100;
 }
 #clock > div {
     display: inline-block;
@@ -63,5 +63,5 @@ body {
     margin-right: -1.5em;
 }
 #date {
-    font-size: 2.4em;
+	font-size: 2.4em;
 }
