@@ -187,7 +187,7 @@ var newtab = (function() {
 	Clock.prototype.update = function() {
 		var date = new Date(),
 		    h = date.getHours(),
-			h12,
+        h12,
 		    m = date.getMinutes();
 
 		// Format hour to 12h

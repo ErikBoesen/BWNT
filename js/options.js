@@ -24,11 +24,11 @@
 
 	document.addEventListener('DOMContentLoaded', function() {
 		var format = document.getElementById('format'),
-		    show_date = document.getElementById('showDate'),
-		    theme = document.getElementById('theme'),
-		    cycle = document.getElementById('cycle'),
-		    use_background = document.getElementById('use-bg-img'),
-		    bg_picker = document.getElementById('bg-img-picker');
+			show_date = document.getElementById('showDate'),
+			theme = document.getElementById('theme'),
+			cycle = document.getElementById('cycle'),
+			use_background = document.getElementById('use-bg-img'),
+			bg_picker = document.getElementById('bg-img-picker');
 
 		format.checked = localStorage.format === 'true';
 		format.addEventListener('change', function() {
@@ -111,7 +111,7 @@
 				this.label_elem.textContent = this.placeholder;
 		}
 
-		for(var i=0,len=inputs.length; i<len; i++) {
+		for (var i = 0, len = inputs.length; i < len; i++) {
 			curr_input = inputs[i];
 			label = document.createElement('label');
 			label.textContent = curr_input.placeholder;
