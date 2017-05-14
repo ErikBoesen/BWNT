@@ -112,3 +112,18 @@ select,
 .bgimage .switch input[type="checkbox"] + label:after {
     background-color: rgba(255, 255, 255, .2);
 }
+
+/* Light Purple*/
+
+.theme-lightpurple,
+.theme-lightpurple option {
+    background-color: #483C6C;
+    color: #CCC;
+}
+.theme-lightpurple select,
+.theme-lightpurple .switch input[type="checkbox"] + label:before,
+.theme-lightpurple .switch input[type="checkbox"] + label:after,
+.theme-lightpurple .checkbox input[type="checkbox"] + label:before,
+.theme-lightpurple .checkbox input[type="checkbox"] + label:after {
+    border-color: #CCC;
+}
