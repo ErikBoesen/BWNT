@@ -7,6 +7,7 @@ Minimalist New Tab page for Chromium.
 ![Light blue theme screenshot](screenshots/screen4.png)
 ![Material theme screenshot](screenshots/screen5.png)
 ![Background image option screenshot](screenshots/screen6.png)
+![Light Purple Theme screenshot](screenshots/screen7.png)
 
 ## Features
 * 12 and 24-hour digital clocks
