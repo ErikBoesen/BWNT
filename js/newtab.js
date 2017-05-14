@@ -49,7 +49,7 @@ var newtab = (function() {
 	}
 
 	function get_meridiem(hour) {
-		return _(hour > 12 ? KEYS.time_pm : KEYS.time_am);
+		return _(hour >= 12 ? KEYS.time_pm : KEYS.time_am);
 	}
 
 	extension.read_option = function(name,callback) {
