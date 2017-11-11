@@ -1,5 +1,5 @@
 # BW New Tab Page
-Minimalist New Tab page for Chromium.
+Minimalist New Tab page extension. Supports all modern browsers.
 
 ![Light theme screenshot](screenshots/screen1.png)
 ![Night theme screenshot](screenshots/screen2.png)
@@ -18,27 +18,21 @@ Minimalist New Tab page for Chromium.
 * Available in some languages aside from English
 
 ## Installation
-### From source _(Recommended)_
-1. Clone or download files inside a folder.
-2. Open Chromium extensions page and activate Developer Mode.
-3. Click on `Load unpacked extension`, locate the extension folder and click open.
-4. If you like, click options to go to the configuration page.
+### From source
+Follow [these instructions](http://www.techradar.com/news/software/install-firefox-chrome-and-opera-extensions-manually-1321636) to install this extension from source.
 
-### Packaged version
-1. Download our latest packaged `.crx` from [here](../../releases/latest).
-2. Open Chromium extensions page.
-3. Drag and drop the `.crx` there and proceed with installation.
-4. If you like, click options to go to the configuration page.
-
-### Google Chrome Web Store
-The packaged Google Chrome extension is available [here](https://chrome.google.com/webstore/detail/doiinciigjmmlnbehjjjkeoamihggkba).
+### Web Stores
+The packaged extension is available on several web stores:
+* [Chrome](https://chrome.google.com/webstore/detail/doiinciigjmmlnbehjjjkeoamihggkba)
+* [Firefox](https://addons.mozilla.org/en-US/firefox/addon/bwnt)
 
 > This extension should work out of box. Settings can be configured in the _Options_ link visible in the extensions menu.
 
 ## Contributing
-Contributions are accepted via [GitHub pull requests](../../pulls). To add a translation copy the `en` folder inside `_locales` and change the folder name to the new locale code.
+Contributions are accepted via [GitHub pull requests](../../pulls).
 
-Finally add your name and email into the CONTRIBUTORS file or in the TRANSLATORS file.
+To add a translation copy the `en` folder inside `_locales` and change the folder name to the new locale code.
+After translation, add your name and email into the CONTRIBUTORS file or in the TRANSLATORS file.
 
 --------------------------------------------------------------------------------
 
