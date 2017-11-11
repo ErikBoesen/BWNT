@@ -8,7 +8,7 @@
 		"128": "res/icon.png"
 	},
 	"default_locale": "en",
-	"minimum_chrome_version" : "36.0",
+	"minimum_chrome_version": "36.0",
 	"chrome_url_overrides": {
 		"newtab": "newtab.html"
 	},
@@ -17,7 +17,7 @@
 		"page": "options.html",
 		"open_in_tab": true
 	},
-	"permissions" : [
+	"permissions": [
 		"storage"
 	]
 }

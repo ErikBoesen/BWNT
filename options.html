@@ -4,8 +4,8 @@
 <head>
     <title data-i18nid="options_title">New Tab Options</title>
 
-	<link rel="stylesheet" href="css/newtab.css"/>
-	<link rel="stylesheet" href="css/options.css"/>
+	<link rel="stylesheet" href="css/newtab.css">
+	<link rel="stylesheet" href="css/options.css">
 </head>
 
 <body>
@@ -15,7 +15,7 @@
 
 	<section class="options">
 		<div class="switch">
-			<input type="checkbox" id="format"/>
+			<input type="checkbox" id="format">
 			<label for="format" data-i18nid="24_hour">24-hour</label>
 			<label for="format" data-i18nid="12_hour">12-hour</label>
 		</div>
@@ -30,24 +30,24 @@
 				<label for="cycle" data-i18nid="change_theme_daytime">Change theme by time of day</label>
 			</div>
 		</section>
-		<select id="theme">
-			<option value="theme-light" data-i18nid="light">Light</option>
-			<option value="theme-night" data-i18nid="night">Night</option>
-			<option value="theme-dark" data-i18nid="dark">Dark</option>
-			<option value="theme-material" data-i18nid="material">Material</option>
-			<option value="theme-lightblue" data-i18nid="lightblue">Light Blue</option>
-			<option value="theme-lightpurple" data-i18nid="lightpurple">Light Purple</option>			
-		</select>
+        <div class="select">
+    		<select id="theme">
+    			<option value="theme-light" data-i18nid="light">Light</option>
+    			<option value="theme-night" data-i18nid="night">Night</option>
+    			<option value="theme-dark" data-i18nid="dark">Dark</option>
+    			<option value="theme-material" data-i18nid="material">Material</option>
+    			<option value="theme-lightblue" data-i18nid="lightblue">Light Blue</option>
+    			<option value="theme-lightpurple" data-i18nid="lightpurple">Light Purple</option>
+    		</select>
+        </div>
 
 		<section>
 			<div class="checkbox">
-				<input type="checkbox" id="use-bg-img"/>
+				<input type="checkbox" id="use-bg-img">
 				<label for="use-bg-img" data-i18nid="use_bg_image">Use a background image</label>
 			</div>
 		</section>
-		<input type="file" id="bg-img-picker" accept="image/*"
-			placeholder="Select an image" data-i18nid="select_image"
-		/>
+		<input type="file" id="bg-img-picker" accept="image/*" placeholder="Select an image" data-i18nid="select_image">
 
 	</section>
 

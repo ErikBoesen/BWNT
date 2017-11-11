@@ -1,15 +1,3 @@
-/*
-	Copyright (C) Germán Franco Dorca
-	Designed by Erik Boesen
-	This program is free software and is licensed under GNU GPLv2.
-*/
-
-
-/******************\
-|     -THEMES-     |
-\******************/
-
-
 /* Default (no theme) */
 body, select option {
 	background-color: #FFFFFF;
