@@ -27,11 +27,11 @@
 
 	"options_title": { "message" : "Optionen für neuen Tab"},
 	"12_hour": { "message" : "12 Stunden"},
-	"24_hour": { "message" : "25 Stunden"},
+	"24_hour": { "message" : "24 Stunden"},
 	"time_am" : { "message" : "am"},
 	"time_pm" : { "message" : "pm"},
 	"show_date": { "message" : "Zeige Datum"},
-	"change_theme_daytime": { "message" : "Theme an Uhrzeit anpassen"},
+	"change_theme_daytime": { "message" : "Darstellung an Uhrzeit anpassen"},
 	"use_bg_image": { "message" : "Bild als Hintergrund verwenden"},
 	"select_image": { "message" : "Datei auswählen"},
 	"light": { "message" : "Hell"},
