@@ -1,0 +1,42 @@
+{
+	"extension_name" : { "message": "BWNT - Neuer Tab" },
+	"extension_description" : { "message": "Minimalistische „Neuer Tab“-Seite" },
+	
+	"date_format" : { "message" : "{weekday}, {day} {month}" },
+
+	"day_monday" : { "message": "Montag" },
+	"day_tuesday" : { "message": "Dienstag" },
+	"day_wednesday" : { "message": "Mittwoch" },
+	"day_thursday" : { "message": "Donnerstag" },
+	"day_friday" : { "message": "Freitag" },
+	"day_saturday" : { "message": "Samstag" },
+	"day_sunday" : { "message": "Sonntag" },
+
+	"month_january" : { "message": "Januar" },
+	"month_february" : { "message": "Februar" },
+	"month_march" : { "message": "März" },
+	"month_april" : { "message": "April" },
+	"month_may" : { "message": "Mai" },
+	"month_june" : { "message": "Juni" },
+	"month_july" : { "message": "Juli" },
+	"month_august" : { "message": "August" },
+	"month_september" : { "message": "September" },
+	"month_october" : { "message": "Oktober" },
+	"month_november" : { "message": "November" },
+	"month_december" : { "message": "Dezember" },
+
+	"options_title": { "message" : "Optionen für neuen Tab"},
+	"12_hour": { "message" : "12 Stunden"},
+	"24_hour": { "message" : "25 Stunden"},
+	"time_am" : { "message" : "am"},
+	"time_pm" : { "message" : "pm"},
+	"show_date": { "message" : "Zeige Datum"},
+	"change_theme_daytime": { "message" : "Theme an Uhrzeit anpassen"},
+	"use_bg_image": { "message" : "Bild als Hintergrund verwenden"},
+	"select_image": { "message" : "Datei auswählen"},
+	"light": { "message" : "Hell"},
+	"night": { "message" : "Nacht"},
+	"dark": { "message" : "Dunkel"},
+	"material": { "message" : "Material"},
+	"lightblue": { "message" : "Hellblau"}
+}
