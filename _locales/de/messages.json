@@ -2,7 +2,7 @@
 	"extension_name" : { "message": "BWNT - Neuer Tab" },
 	"extension_description" : { "message": "Minimalistische „Neuer Tab“-Seite" },
 	
-	"date_format" : { "message" : "{weekday}, {day} {month}" },
+	"date_format" : { "message" : "{weekday}, {day}. {month}" },
 
 	"day_monday" : { "message": "Montag" },
 	"day_tuesday" : { "message": "Dienstag" },
