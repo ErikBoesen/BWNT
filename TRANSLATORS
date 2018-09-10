@@ -1,7 +1,7 @@
 List of translators, sorted by locale name and translator name.
 
 To add a new one to the list, add the letter 'L' before a language or the letter
-'A' for an author, followed by a color and a space. Example:
+'A' for an author, followed by a colon and a space. Example:
 
 L: [Language name in English] ([locale])
 A: [Author's name] <[email]>, [year]
@@ -11,3 +11,6 @@ A: Germán Franco <dev.germanfr@gmail.com>, 2016
 
 L: French (fr)
 A: Philippe Loctaux <phil@philippeloctaux.com>, 2016
+
+L: German (de)
+A: Karsten Müller <karsten.mueller@schwarzschild.de>, 2018
