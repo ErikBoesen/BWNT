@@ -1,13 +1,13 @@
 # BW New Tab Page
 Minimalist New Tab page extension. Supports all modern browsers.
 
-![Light theme screenshot](screenshots/screen1.png)
-![Night theme screenshot](screenshots/screen2.png)
-![Dark theme screenshot](screenshots/screen3.png)
-![Light blue theme screenshot](screenshots/screen4.png)
-![Material theme screenshot](screenshots/screen5.png)
-![Background image option screenshot](screenshots/screen6.png)
-![Light Purple Theme screenshot](screenshots/screen7.png)
+![Light theme](screenshots/screen1.png)
+![Night theme](screenshots/screen2.png)
+![Dark theme](screenshots/screen3.png)
+![Light blue theme](screenshots/screen4.png)
+![Material theme](screenshots/screen5.png)
+![Light Purple theme](screenshots/screen7.png)
+![Background image theme](screenshots/screen6.png)
 
 ## Features
 * 12 and 24-hour digital clocks
