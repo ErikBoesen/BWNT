@@ -39,9 +39,8 @@ After translation, add your name and email into the CONTRIBUTORS file or in the 
 ## License
 This program is free software and is licensed under GNU GPLv2.
 
-	Minimalist New Tab page for Chromium.
-	Copyright (C) Germán Franco Dorca
-	Designed by Erik Boesen
+	Minimalist New Tab page for all browsers.
+	Copyright (C) Erik Boesen, Germán Franco Dorca
 
 	This program is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
