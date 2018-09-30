@@ -1,5 +1,5 @@
 /* Default (no theme) */
-body, select option {
+body {
 	background-color: #FFFFFF;
 	color: #333333;
 }
@@ -13,8 +13,7 @@ select,
 
 /* Light */
 
-.theme-light,
-.theme-light option {
+.theme-light {
     background-color: white;
     color: #333;
 }
@@ -28,8 +27,7 @@ select,
 
 /* Dark */
 
-.theme-dark,
-.theme-dark option {
+.theme-dark {
     background-color: #424242;
     color: black;
 }
@@ -43,8 +41,7 @@ select,
 
 /* Night */
 
-.theme-night,
-.theme-night option {
+.theme-night {
     background-color: #212121;
     color: #F5F5F5;
 }
@@ -58,8 +55,7 @@ select,
 
 /* Material */
 
-.theme-material,
-.theme-material option {
+.theme-material {
     background-color: #37474F;
     color: #FAFAFA;
 }
@@ -77,8 +73,7 @@ select,
 
 /* Light Blue */
 
-.theme-lightblue,
-.theme-lightblue option {
+.theme-lightblue {
     background-color: #ccc;
     color: #003366;
 }
@@ -103,8 +98,7 @@ select,
 
 /* Light Purple*/
 
-.theme-lightpurple,
-.theme-lightpurple option {
+.theme-lightpurple {
     background-color: #483C6C;
     color: #CCC;
 }
