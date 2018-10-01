@@ -31,9 +31,6 @@ body {
 	-webkit-touch-callout: none;
 	user-select: none;
 	-webkit-font-smoothing: antialiased;
-
-	transition-duration: .2s;
-	transition-property: background-color, color;
 }
 
 #background-layer {
