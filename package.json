@@ -1,0 +1,22 @@
+{
+  "name": "bwnt",
+  "version": "2.1.2",
+  "description": "Minimalist New Tab page extension. Supports all modern browsers.",
+  "scripts": {
+    "build": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ErikBoesen/BWNT.git"
+  },
+  "author": "Erik Boesen",
+  "license": "GPLv3",
+  "bugs": {
+    "url": "https://github.com/ErikBoesen/BWNT/issues"
+  },
+  "homepage": "https://github.com/ErikBoesen/BWNT#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-zip": "^4.2.0"
+  }
+}
