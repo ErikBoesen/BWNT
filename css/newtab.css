@@ -40,7 +40,6 @@ body {
 	z-index: -1;
 
 	opacity: 0;
-	transition: .6s opacity;
 	background-position: center center;
 	background-size: cover;
 }
