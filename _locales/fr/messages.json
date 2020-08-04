@@ -31,7 +31,7 @@
 	"time_am" : { "message" : "am"},
 	"time_pm" : { "message" : "pm"},
 	"show_date": { "message" : "Afficher la date"},
-	"change_theme_daytime": { "message" : "Changer le theme en fonction du temps du jour"},
+	"change_theme_daytime": { "message" : "Changer le theme en fonction de l\u0027heure de la journ\u00E9e"},
 	"use_bg_image": { "message" : "Utiliser un fond d\u0027\u00E9cran"},
 	"select_image": { "message" : "S\u00E9lectionner une image"},
 	"light": { "message" : "Clair"},
